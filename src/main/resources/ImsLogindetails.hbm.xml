@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jan, 2016 10:53:24 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsLogindetails" table="ims_logindetails" catalog="IMS_DB">
+        <id name="userId" type="long">
+            <column name="UserID" precision="12" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="imsEmployee" class="org.ims.dao.entity.ImsEmployee" fetch="select">
+            <column name="EmployeeID" length="12" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="UserName" length="15" not-null="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="UserPassword" length="25" not-null="true" />
+        </property>
+        <property name="loginStatus" type="boolean">
+            <column name="LoginStatus" not-null="true" />
+        </property>
+        <property name="loginDate" type="timestamp">
+            <column name="LoginDate" length="19" />
+        </property>
+        <property name="enteredBy" type="java.lang.Long">
+            <column name="EnteredBy" precision="12" scale="0" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+        <set name="imsOptionrightses" table="ims_optionrights" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsOptionrights" />
+        </set>
+        <set name="imsOptionrightses_1" table="ims_optionrights" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsOptionrights" />
+        </set>
+        <set name="imsGrouprightses" table="ims_grouprights" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsGrouprights" />
+        </set>
+        <set name="imsBanktransactionses" table="ims_banktransactions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsBanktransactions" />
+        </set>
+        <set name="imsProductcategories" table="ims_productcategory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsProductcategory" />
+        </set>
+        <set name="imsOrderdetailses" table="ims_orderdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsOrderdetails" />
+        </set>
+        <set name="imsSuppliermasters" table="ims_suppliermaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsSuppliermaster" />
+        </set>
+        <set name="imsPurchaseproductdetailses" table="ims_purchaseproductdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPurchaseproductdetails" />
+        </set>
+        <set name="imsSuppliersauthorizers" table="ims_suppliersauthorizer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsSuppliersauthorizer" />
+        </set>
+        <set name="imsGrouprightses_1" table="ims_grouprights" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsGrouprights" />
+        </set>
+        <set name="imsTransactiondetailses" table="ims_transactiondetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsTransactiondetails" />
+        </set>
+        <set name="imsPurchasemasters" table="ims_purchasemaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPurchasemaster" />
+        </set>
+        <set name="imsDealersauthorizers" table="ims_dealersauthorizer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsDealersauthorizer" />
+        </set>
+        <set name="imsProductdetailses" table="ims_productdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsProductdetails" />
+        </set>
+        <set name="imsBanktransactionses_1" table="ims_banktransactions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsBanktransactions" />
+        </set>
+        <set name="imsPartnerdetailses" table="ims_partnerdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPartnerdetails" />
+        </set>
+        <set name="imsProductcategories_1" table="ims_productcategory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsProductcategory" />
+        </set>
+        <set name="imsPartnerdetailses_1" table="ims_partnerdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPartnerdetails" />
+        </set>
+        <set name="imsStockdetailses" table="ims_stockdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsStockdetails" />
+        </set>
+        <set name="imsTransactiondetailses_1" table="ims_transactiondetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsTransactiondetails" />
+        </set>
+        <set name="imsDealermasters" table="ims_dealermaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsDealermaster" />
+        </set>
+        <set name="imsPurchasemasters_1" table="ims_purchasemaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPurchasemaster" />
+        </set>
+        <set name="imsPurchaseproductdetailses_1" table="ims_purchaseproductdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPurchaseproductdetails" />
+        </set>
+        <set name="imsSuppliersauthorizers_1" table="ims_suppliersauthorizer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsSuppliersauthorizer" />
+        </set>
+        <set name="imsDealermasters_1" table="ims_dealermaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsDealermaster" />
+        </set>
+        <set name="imsGenraldefinitions" table="ims_genraldefinition" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsGenraldefinition" />
+        </set>
+        <set name="imsDealersauthorizers_1" table="ims_dealersauthorizer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsDealersauthorizer" />
+        </set>
+        <set name="imsSuppliermasters_1" table="ims_suppliermaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsSuppliermaster" />
+        </set>
+        <set name="imsOrderdetailses_1" table="ims_orderdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsOrderdetails" />
+        </set>
+        <set name="imsGenraldefinitions_1" table="ims_genraldefinition" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsGenraldefinition" />
+        </set>
+    </class>
+</hibernate-mapping>

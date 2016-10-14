@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jan, 2016 10:53:24 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsTaxslab" table="ims_taxslab" catalog="IMS_DB">
+        <id name="serialNumber" type="java.lang.Integer">
+            <column name="SerialNumber" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="vat1" type="java.lang.Double">
+            <column name="VAT1" precision="22" scale="0" />
+        </property>
+        <property name="vat2" type="java.lang.Double">
+            <column name="VAT2" precision="22" scale="0" />
+        </property>
+        <property name="excessPercentage" type="java.lang.Double">
+            <column name="ExcessPercentage" precision="22" scale="0" />
+        </property>
+        <property name="educationCessPercentage" type="java.lang.Double">
+            <column name="EducationCessPercentage" precision="22" scale="0" />
+        </property>
+        <property name="secondaryEducationCessPercentage" type="java.lang.Double">
+            <column name="SecondaryEducationCessPercentage" precision="22" scale="0" />
+        </property>
+        <property name="cstpercentage" type="java.lang.Double">
+            <column name="CSTPercentage" precision="22" scale="0" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
+        <property name="vaildTillDate" type="date">
+            <column name="VaildTillDate" length="10" />
+        </property>
+        <property name="enteredBy" type="java.lang.Long">
+            <column name="EnteredBy" precision="12" scale="0" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

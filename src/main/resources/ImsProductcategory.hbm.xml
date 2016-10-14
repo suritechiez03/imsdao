@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jan, 2016 10:53:24 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsProductcategory" table="ims_productcategory" catalog="IMS_DB">
+        <id name="categoryCode" type="string">
+            <column name="CategoryCode" length="30" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="categoryName" type="string">
+            <column name="CategoryName" length="100" />
+        </property>
+        <property name="additionalInfo" type="string">
+            <column name="AdditionalInfo" length="250" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+        <set name="imsProductdetailses" table="ims_productdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CategoryCode" length="30" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsProductdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

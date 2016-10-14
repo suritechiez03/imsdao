@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jan, 2016 10:53:24 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsSalesproductdetails" table="ims_salesproductdetails" catalog="IMS_DB">
+        <composite-id name="id" class="org.ims.dao.entity.ImsSalesproductdetailsId">
+            <key-property name="transactionId" type="big_decimal">
+                <column name="TransactionId" precision="20" scale="0" />
+            </key-property>
+            <key-property name="invoiceNo" type="string">
+                <column name="InvoiceNo" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="imsProductdetails" class="org.ims.dao.entity.ImsProductdetails" fetch="select">
+            <column name="ProductCode" length="30" />
+        </many-to-one>
+        <many-to-one name="imsSalesmaster" class="org.ims.dao.entity.ImsSalesmaster" update="false" insert="false" fetch="select">
+            <column name="InvoiceNo" length="20" not-null="true" />
+        </many-to-one>
+        <property name="particulars" type="string">
+            <column name="Particulars" length="45" />
+        </property>
+        <property name="orderQty" type="java.lang.Integer">
+            <column name="OrderQty" />
+        </property>
+        <property name="dispatchedQty" type="java.lang.Integer">
+            <column name="DispatchedQty" />
+        </property>
+        <property name="balanceQty" type="java.lang.Integer">
+            <column name="BalanceQty" />
+        </property>
+        <property name="discount" type="string">
+            <column name="Discount" length="45" />
+        </property>
+        <property name="salesPrie" type="java.lang.Double">
+            <column name="SalesPrie" precision="14" scale="4" />
+        </property>
+        <property name="enteredBy" type="java.lang.Long">
+            <column name="EnteredBy" precision="12" scale="0" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

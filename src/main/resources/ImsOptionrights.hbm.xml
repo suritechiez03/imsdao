@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 Jan, 2016 10:53:24 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsOptionrights" table="ims_optionrights" catalog="IMS_DB">
+        <id name="moduleNumber" type="long">
+            <column name="ModuleNumber" precision="10" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" precision="12" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="moduleName" type="string">
+            <column name="ModuleName" length="50" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="19" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UpdatedDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>
