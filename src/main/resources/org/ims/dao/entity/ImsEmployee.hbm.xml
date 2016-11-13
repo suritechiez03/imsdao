@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsEmployee" table="ims_employee" catalog="IMS_DB" optimistic-lock="version">
+        <id name="employeeId" type="string">
+            <column name="EmployeeID" length="12" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsGenraldefinitionByDesgnation" class="org.ims.dao.entity.ImsGenraldefinition" fetch="select">
+            <column name="Desgnation" length="6" not-null="true" />
+        </many-to-one>
+        <many-to-one name="imsGenraldefinitionByIdProof" class="org.ims.dao.entity.ImsGenraldefinition" fetch="select">
+            <column name="IdProof" length="6" not-null="true" />
+        </many-to-one>
+        <many-to-one name="imsGrouprights" class="org.ims.dao.entity.ImsGrouprights" fetch="select">
+            <column name="GroupID" not-null="true" />
+        </many-to-one>
+        <property name="employeeName" type="string">
+            <column name="EmployeeName" length="50" not-null="true" />
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="DOB" length="19" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="250" />
+        </property>
+        <property name="phoneNo" type="string">
+            <column name="PhoneNo" length="25" not-null="true" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="EmailID" length="50" />
+        </property>
+        <property name="joinDate" type="timestamp">
+            <column name="JoinDate" length="19" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="Status" />
+        </property>
+        <property name="enteredBy" type="long">
+            <column name="EnteredBy" not-null="true" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+        <set name="imsLogindetailses" table="ims_logindetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EmployeeID" length="12" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsLogindetails" />
+        </set>
+    </class>
+</hibernate-mapping>

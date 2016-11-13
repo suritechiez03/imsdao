@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsManageorders" table="ims_manageorders" catalog="IMS_DB" optimistic-lock="version">
+        <id name="oderNumber" type="long">
+            <column name="OderNumber" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" not-null="true" />
+        </many-to-one>
+        <property name="orderType" type="int">
+            <column name="OrderType" not-null="true" />
+        </property>
+        <property name="orderFor" type="string">
+            <column name="OrderFor" length="45" />
+        </property>
+        <property name="orderStatus" type="int">
+            <column name="OrderStatus" not-null="true" />
+        </property>
+        <property name="additionalInfo" type="string">
+            <column name="AdditionalInfo" />
+        </property>
+        <property name="orderRaisedDate" type="timestamp">
+            <column name="OrderRaisedDate" length="19" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+        <set name="imsManageorderdetailses" table="ims_manageorderdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OrderNumber" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsManageorderdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

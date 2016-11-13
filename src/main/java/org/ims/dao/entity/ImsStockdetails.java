@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -12,8 +12,8 @@ public class ImsStockdetails  implements java.io.Serializable {
 
 
      private String productCode;
-     private ImsProductdetails imsProductdetails;
      private ImsLogindetails imsLogindetails;
+     private ImsProductdetails imsProductdetails;
      private Long purchasedQty;
      private Long dispatchedQty;
      private Long availableQty;
@@ -37,9 +37,9 @@ public class ImsStockdetails  implements java.io.Serializable {
     public ImsStockdetails(ImsProductdetails imsProductdetails) {
         this.imsProductdetails = imsProductdetails;
     }
-    public ImsStockdetails(ImsProductdetails imsProductdetails, ImsLogindetails imsLogindetails, Long purchasedQty, Long dispatchedQty, Long availableQty, BigDecimal basicRate, BigDecimal excesseDutyPercentage, BigDecimal excessDutyRate, BigDecimal transPortationPercentage, BigDecimal transportationRate, BigDecimal cstpercentage, BigDecimal cstrate, BigDecimal basicDistributorPrice, BigDecimal ourMarginPercentage, BigDecimal ourMerginAmount, BigDecimal dealerPrice, Date enteredDate) {
-       this.imsProductdetails = imsProductdetails;
+    public ImsStockdetails(ImsLogindetails imsLogindetails, ImsProductdetails imsProductdetails, Long purchasedQty, Long dispatchedQty, Long availableQty, BigDecimal basicRate, BigDecimal excesseDutyPercentage, BigDecimal excessDutyRate, BigDecimal transPortationPercentage, BigDecimal transportationRate, BigDecimal cstpercentage, BigDecimal cstrate, BigDecimal basicDistributorPrice, BigDecimal ourMarginPercentage, BigDecimal ourMerginAmount, BigDecimal dealerPrice, Date enteredDate) {
        this.imsLogindetails = imsLogindetails;
+       this.imsProductdetails = imsProductdetails;
        this.purchasedQty = purchasedQty;
        this.dispatchedQty = dispatchedQty;
        this.availableQty = availableQty;
@@ -64,19 +64,19 @@ public class ImsStockdetails  implements java.io.Serializable {
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
-    public ImsProductdetails getImsProductdetails() {
-        return this.imsProductdetails;
-    }
-    
-    public void setImsProductdetails(ImsProductdetails imsProductdetails) {
-        this.imsProductdetails = imsProductdetails;
-    }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
     }
     
     public void setImsLogindetails(ImsLogindetails imsLogindetails) {
         this.imsLogindetails = imsLogindetails;
+    }
+    public ImsProductdetails getImsProductdetails() {
+        return this.imsProductdetails;
+    }
+    
+    public void setImsProductdetails(ImsProductdetails imsProductdetails) {
+        this.imsProductdetails = imsProductdetails;
     }
     public Long getPurchasedQty() {
         return this.purchasedQty;

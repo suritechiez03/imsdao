@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,7 +18,6 @@ public class ImsGrouprights  implements java.io.Serializable {
      private String groupRights;
      private Date enteredDate;
      private Set imsEmployees = new HashSet(0);
-     private Set imsEmployees_1 = new HashSet(0);
 
     public ImsGrouprights() {
     }
@@ -31,14 +30,13 @@ public class ImsGrouprights  implements java.io.Serializable {
         this.groupRights = groupRights;
         this.enteredDate = enteredDate;
     }
-    public ImsGrouprights(long groupId, ImsLogindetails imsLogindetails, String groupName, String groupRights, Date enteredDate, Set imsEmployees, Set imsEmployees_1) {
+    public ImsGrouprights(long groupId, ImsLogindetails imsLogindetails, String groupName, String groupRights, Date enteredDate, Set imsEmployees) {
        this.groupId = groupId;
        this.imsLogindetails = imsLogindetails;
        this.groupName = groupName;
        this.groupRights = groupRights;
        this.enteredDate = enteredDate;
        this.imsEmployees = imsEmployees;
-       this.imsEmployees_1 = imsEmployees_1;
     }
    
     public long getGroupId() {
@@ -82,13 +80,6 @@ public class ImsGrouprights  implements java.io.Serializable {
     
     public void setImsEmployees(Set imsEmployees) {
         this.imsEmployees = imsEmployees;
-    }
-    public Set getImsEmployees_1() {
-        return this.imsEmployees_1;
-    }
-    
-    public void setImsEmployees_1(Set imsEmployees_1) {
-        this.imsEmployees_1 = imsEmployees_1;
     }
 
 

@@ -18,6 +18,10 @@ import org.ims.dao.template.ImsDAOTemplate;
  */
 public class ImsProductcategoryDAO extends ImsDAOTemplate<ImsProductcategory> implements IGenericDao<ImsProductcategory> {
 
+    public ImsProductcategoryDAO() {
+        super.setClazz(ImsProductcategory.class);
+    }
+
     @Override
     public List<Map> executeCustomSQL(String sql) {
         return super.executeCustomSQL(sql); //To change body of generated methods, choose Tools | Templates.

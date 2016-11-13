@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsBanktransactions" table="ims_banktransactions" catalog="IMS_DB" optimistic-lock="version">
+        <id name="tranId" type="java.lang.Integer">
+            <column name="TranId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" />
+        </many-to-one>
+        <property name="accountNumber" type="string">
+            <column name="AccountNumber" length="50" />
+        </property>
+        <property name="transactionDate" type="timestamp">
+            <column name="TransactionDate" length="19" />
+        </property>
+        <property name="transactionAmount" type="big_decimal">
+            <column name="TransactionAmount" precision="15" />
+        </property>
+        <property name="chequeNo" type="string">
+            <column name="ChequeNo" length="25" />
+        </property>
+        <property name="chequeDate" type="date">
+            <column name="ChequeDate" length="10" />
+        </property>
+        <property name="chequeStatus" type="java.lang.Character">
+            <column name="ChequeStatus" length="1" />
+        </property>
+        <property name="chequeBank" type="string">
+            <column name="ChequeBank" length="50" />
+        </property>
+        <property name="transactionStatus" type="java.lang.Character">
+            <column name="TransactionStatus" length="1" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="tranFrom" type="java.lang.Integer">
+            <column name="TranFrom" />
+        </property>
+        <property name="tranType" type="java.lang.Integer">
+            <column name="TranType" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

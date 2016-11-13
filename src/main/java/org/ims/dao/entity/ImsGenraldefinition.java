@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,9 +18,7 @@ public class ImsGenraldefinition  implements java.io.Serializable {
      private String gdName;
      private Date enteredDate;
      private Set imsEmployeesForDesgnation = new HashSet(0);
-     private Set imsEmployeesForDesgnation_1 = new HashSet(0);
      private Set imsEmployeesForIdProof = new HashSet(0);
-     private Set imsEmployeesForIdProof_1 = new HashSet(0);
 
     public ImsGenraldefinition() {
     }
@@ -32,16 +30,14 @@ public class ImsGenraldefinition  implements java.io.Serializable {
         this.gdName = gdName;
         this.enteredDate = enteredDate;
     }
-    public ImsGenraldefinition(String gdCode, ImsLogindetails imsLogindetails, String gdAbb, String gdName, Date enteredDate, Set imsEmployeesForDesgnation, Set imsEmployeesForDesgnation_1, Set imsEmployeesForIdProof, Set imsEmployeesForIdProof_1) {
+    public ImsGenraldefinition(String gdCode, ImsLogindetails imsLogindetails, String gdAbb, String gdName, Date enteredDate, Set imsEmployeesForDesgnation, Set imsEmployeesForIdProof) {
        this.gdCode = gdCode;
        this.imsLogindetails = imsLogindetails;
        this.gdAbb = gdAbb;
        this.gdName = gdName;
        this.enteredDate = enteredDate;
        this.imsEmployeesForDesgnation = imsEmployeesForDesgnation;
-       this.imsEmployeesForDesgnation_1 = imsEmployeesForDesgnation_1;
        this.imsEmployeesForIdProof = imsEmployeesForIdProof;
-       this.imsEmployeesForIdProof_1 = imsEmployeesForIdProof_1;
     }
    
     public String getGdCode() {
@@ -86,26 +82,12 @@ public class ImsGenraldefinition  implements java.io.Serializable {
     public void setImsEmployeesForDesgnation(Set imsEmployeesForDesgnation) {
         this.imsEmployeesForDesgnation = imsEmployeesForDesgnation;
     }
-    public Set getImsEmployeesForDesgnation_1() {
-        return this.imsEmployeesForDesgnation_1;
-    }
-    
-    public void setImsEmployeesForDesgnation_1(Set imsEmployeesForDesgnation_1) {
-        this.imsEmployeesForDesgnation_1 = imsEmployeesForDesgnation_1;
-    }
     public Set getImsEmployeesForIdProof() {
         return this.imsEmployeesForIdProof;
     }
     
     public void setImsEmployeesForIdProof(Set imsEmployeesForIdProof) {
         this.imsEmployeesForIdProof = imsEmployeesForIdProof;
-    }
-    public Set getImsEmployeesForIdProof_1() {
-        return this.imsEmployeesForIdProof_1;
-    }
-    
-    public void setImsEmployeesForIdProof_1(Set imsEmployeesForIdProof_1) {
-        this.imsEmployeesForIdProof_1 = imsEmployeesForIdProof_1;
     }
 
 

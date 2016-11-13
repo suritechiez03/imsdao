@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -13,8 +13,8 @@ public class ImsOrderdetails  implements java.io.Serializable {
 
      private ImsOrderdetailsId id;
      private ImsDealermaster imsDealermaster;
-     private ImsProductdetails imsProductdetails;
      private ImsLogindetails imsLogindetails;
+     private ImsProductdetails imsProductdetails;
      private Date orderDateAndTime;
      private Integer quantity;
      private Integer dispatchedQty;
@@ -34,11 +34,11 @@ public class ImsOrderdetails  implements java.io.Serializable {
         this.id = id;
         this.imsProductdetails = imsProductdetails;
     }
-    public ImsOrderdetails(ImsOrderdetailsId id, ImsDealermaster imsDealermaster, ImsProductdetails imsProductdetails, ImsLogindetails imsLogindetails, Date orderDateAndTime, Integer quantity, Integer dispatchedQty, Integer balanceQty, Double discount, Double vat, BigDecimal amount, String remarks, String status, Date enteredDate) {
+    public ImsOrderdetails(ImsOrderdetailsId id, ImsDealermaster imsDealermaster, ImsLogindetails imsLogindetails, ImsProductdetails imsProductdetails, Date orderDateAndTime, Integer quantity, Integer dispatchedQty, Integer balanceQty, Double discount, Double vat, BigDecimal amount, String remarks, String status, Date enteredDate) {
        this.id = id;
        this.imsDealermaster = imsDealermaster;
-       this.imsProductdetails = imsProductdetails;
        this.imsLogindetails = imsLogindetails;
+       this.imsProductdetails = imsProductdetails;
        this.orderDateAndTime = orderDateAndTime;
        this.quantity = quantity;
        this.dispatchedQty = dispatchedQty;
@@ -65,19 +65,19 @@ public class ImsOrderdetails  implements java.io.Serializable {
     public void setImsDealermaster(ImsDealermaster imsDealermaster) {
         this.imsDealermaster = imsDealermaster;
     }
-    public ImsProductdetails getImsProductdetails() {
-        return this.imsProductdetails;
-    }
-    
-    public void setImsProductdetails(ImsProductdetails imsProductdetails) {
-        this.imsProductdetails = imsProductdetails;
-    }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
     }
     
     public void setImsLogindetails(ImsLogindetails imsLogindetails) {
         this.imsLogindetails = imsLogindetails;
+    }
+    public ImsProductdetails getImsProductdetails() {
+        return this.imsProductdetails;
+    }
+    
+    public void setImsProductdetails(ImsProductdetails imsProductdetails) {
+        this.imsProductdetails = imsProductdetails;
     }
     public Date getOrderDateAndTime() {
         return this.orderDateAndTime;

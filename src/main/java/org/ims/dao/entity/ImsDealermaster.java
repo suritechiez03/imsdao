@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -25,10 +25,8 @@ public class ImsDealermaster  implements java.io.Serializable {
      private String offlicePhNumber;
      private Date enteredDate;
      private Boolean status;
-     private Set imsDealersauthorizers = new HashSet(0);
      private Set imsOrderdetailses = new HashSet(0);
-     private Set imsDealersauthorizers_1 = new HashSet(0);
-     private Set imsOrderdetailses_1 = new HashSet(0);
+     private Set imsDealersauthorizers = new HashSet(0);
 
     public ImsDealermaster() {
     }
@@ -42,7 +40,7 @@ public class ImsDealermaster  implements java.io.Serializable {
         this.cstnumber = cstnumber;
         this.enteredDate = enteredDate;
     }
-    public ImsDealermaster(String dealerNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status, Set imsDealersauthorizers, Set imsOrderdetailses, Set imsDealersauthorizers_1, Set imsOrderdetailses_1) {
+    public ImsDealermaster(String dealerNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status, Set imsOrderdetailses, Set imsDealersauthorizers) {
        this.dealerNumber = dealerNumber;
        this.imsLogindetails = imsLogindetails;
        this.companyName = companyName;
@@ -56,10 +54,8 @@ public class ImsDealermaster  implements java.io.Serializable {
        this.offlicePhNumber = offlicePhNumber;
        this.enteredDate = enteredDate;
        this.status = status;
-       this.imsDealersauthorizers = imsDealersauthorizers;
        this.imsOrderdetailses = imsOrderdetailses;
-       this.imsDealersauthorizers_1 = imsDealersauthorizers_1;
-       this.imsOrderdetailses_1 = imsOrderdetailses_1;
+       this.imsDealersauthorizers = imsDealersauthorizers;
     }
    
     public String getDealerNumber() {
@@ -153,13 +149,6 @@ public class ImsDealermaster  implements java.io.Serializable {
     public void setStatus(Boolean status) {
         this.status = status;
     }
-    public Set getImsDealersauthorizers() {
-        return this.imsDealersauthorizers;
-    }
-    
-    public void setImsDealersauthorizers(Set imsDealersauthorizers) {
-        this.imsDealersauthorizers = imsDealersauthorizers;
-    }
     public Set getImsOrderdetailses() {
         return this.imsOrderdetailses;
     }
@@ -167,27 +156,13 @@ public class ImsDealermaster  implements java.io.Serializable {
     public void setImsOrderdetailses(Set imsOrderdetailses) {
         this.imsOrderdetailses = imsOrderdetailses;
     }
-    public Set getImsDealersauthorizers_1() {
-        return this.imsDealersauthorizers_1;
+    public Set getImsDealersauthorizers() {
+        return this.imsDealersauthorizers;
     }
     
-    public void setImsDealersauthorizers_1(Set imsDealersauthorizers_1) {
-        this.imsDealersauthorizers_1 = imsDealersauthorizers_1;
+    public void setImsDealersauthorizers(Set imsDealersauthorizers) {
+        this.imsDealersauthorizers = imsDealersauthorizers;
     }
-    public Set getImsOrderdetailses_1() {
-        return this.imsOrderdetailses_1;
-    }
-    
-    public void setImsOrderdetailses_1(Set imsOrderdetailses_1) {
-        this.imsOrderdetailses_1 = imsOrderdetailses_1;
-    }
-
-    @Override
-    public String toString() {
-        return "ImsDealermaster{" + "dealerNumber=" + dealerNumber + ", companyName=" + companyName + ", companywebsite=" + companywebsite + ", companyEmail=" + companyEmail + ", comapanyAddress=" + comapanyAddress + ", tinNumber=" + tinNumber + ", cstnumber=" + cstnumber + ", pannumber=" + pannumber + ", vccertificate=" + vccertificate + ", offlicePhNumber=" + offlicePhNumber + ", enteredDate=" + enteredDate + ", status=" + status + '}';
-    }
-
-   
 
 
 

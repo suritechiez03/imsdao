@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 
@@ -36,6 +36,23 @@ public class ImsOrderdetailsId  implements java.io.Serializable {
     }
 
 
+   public boolean equals(Object other) {
+         if ( (this == other ) ) return true;
+		 if ( (other == null ) ) return false;
+		 if ( !(other instanceof ImsOrderdetailsId) ) return false;
+		 ImsOrderdetailsId castOther = ( ImsOrderdetailsId ) other; 
+         
+		 return (this.getOrderNo()==castOther.getOrderNo())
+ && ( (this.getProductCode()==castOther.getProductCode()) || ( this.getProductCode()!=null && castOther.getProductCode()!=null && this.getProductCode().equals(castOther.getProductCode()) ) );
+   }
+   
+   public int hashCode() {
+         int result = 17;
+         
+         result = 37 * result + this.getOrderNo();
+         result = 37 * result + ( getProductCode() == null ? 0 : this.getProductCode().hashCode() );
+         return result;
+   }   
 
 
 }

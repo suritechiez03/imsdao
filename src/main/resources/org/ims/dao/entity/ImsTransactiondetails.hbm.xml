@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsTransactiondetails" table="ims_transactiondetails" catalog="IMS_DB" optimistic-lock="version">
+        <id name="transactionId" type="java.lang.Integer">
+            <column name="TransactionId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" />
+        </many-to-one>
+        <property name="invoiceNo" type="string">
+            <column name="InvoiceNo" length="45" />
+        </property>
+        <property name="transactionDate" type="timestamp">
+            <column name="TransactionDate" length="19" />
+        </property>
+        <property name="transactionType" type="java.lang.Integer">
+            <column name="TransactionType" />
+        </property>
+        <property name="transactionCrdrtype" type="java.lang.Integer">
+            <column name="TransactionCRDRType" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="vocherNo" type="java.lang.Integer">
+            <column name="VocherNo" />
+        </property>
+        <property name="gl" type="string">
+            <column name="GL" length="20" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,8 +13,8 @@ public class ImsProductdetails  implements java.io.Serializable {
 
 
      private String productCode;
-     private ImsProductcategory imsProductcategory;
      private ImsLogindetails imsLogindetails;
+     private ImsProductcategory imsProductcategory;
      private String productName;
      private String specificationAndThickNess;
      private String units;
@@ -22,13 +22,11 @@ public class ImsProductdetails  implements java.io.Serializable {
      private Long moq;
      private String color;
      private Date enteredDate;
+     private Set imsManageorderdetailses = new HashSet(0);
      private Set imsSalesproductdetailses = new HashSet(0);
-     private Set imsSalesproductdetailses_1 = new HashSet(0);
-     private Set imsOrderdetailses = new HashSet(0);
      private ImsStockdetails imsStockdetails;
+     private Set imsOrderdetailses = new HashSet(0);
      private Set imsPurchaseproductdetailses = new HashSet(0);
-     private Set imsPurchaseproductdetailses_1 = new HashSet(0);
-     private Set imsOrderdetailses_1 = new HashSet(0);
 
     public ImsProductdetails() {
     }
@@ -37,10 +35,10 @@ public class ImsProductdetails  implements java.io.Serializable {
     public ImsProductdetails(String productCode) {
         this.productCode = productCode;
     }
-    public ImsProductdetails(String productCode, ImsProductcategory imsProductcategory, ImsLogindetails imsLogindetails, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate, Set imsSalesproductdetailses, Set imsSalesproductdetailses_1, Set imsOrderdetailses, ImsStockdetails imsStockdetails, Set imsPurchaseproductdetailses, Set imsPurchaseproductdetailses_1, Set imsOrderdetailses_1) {
+    public ImsProductdetails(String productCode, ImsLogindetails imsLogindetails, ImsProductcategory imsProductcategory, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate, Set imsManageorderdetailses, Set imsSalesproductdetailses, ImsStockdetails imsStockdetails, Set imsOrderdetailses, Set imsPurchaseproductdetailses) {
        this.productCode = productCode;
-       this.imsProductcategory = imsProductcategory;
        this.imsLogindetails = imsLogindetails;
+       this.imsProductcategory = imsProductcategory;
        this.productName = productName;
        this.specificationAndThickNess = specificationAndThickNess;
        this.units = units;
@@ -48,13 +46,11 @@ public class ImsProductdetails  implements java.io.Serializable {
        this.moq = moq;
        this.color = color;
        this.enteredDate = enteredDate;
+       this.imsManageorderdetailses = imsManageorderdetailses;
        this.imsSalesproductdetailses = imsSalesproductdetailses;
-       this.imsSalesproductdetailses_1 = imsSalesproductdetailses_1;
-       this.imsOrderdetailses = imsOrderdetailses;
        this.imsStockdetails = imsStockdetails;
+       this.imsOrderdetailses = imsOrderdetailses;
        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-       this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
-       this.imsOrderdetailses_1 = imsOrderdetailses_1;
     }
    
     public String getProductCode() {
@@ -64,19 +60,19 @@ public class ImsProductdetails  implements java.io.Serializable {
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
-    public ImsProductcategory getImsProductcategory() {
-        return this.imsProductcategory;
-    }
-    
-    public void setImsProductcategory(ImsProductcategory imsProductcategory) {
-        this.imsProductcategory = imsProductcategory;
-    }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
     }
     
     public void setImsLogindetails(ImsLogindetails imsLogindetails) {
         this.imsLogindetails = imsLogindetails;
+    }
+    public ImsProductcategory getImsProductcategory() {
+        return this.imsProductcategory;
+    }
+    
+    public void setImsProductcategory(ImsProductcategory imsProductcategory) {
+        this.imsProductcategory = imsProductcategory;
     }
     public String getProductName() {
         return this.productName;
@@ -127,26 +123,19 @@ public class ImsProductdetails  implements java.io.Serializable {
     public void setEnteredDate(Date enteredDate) {
         this.enteredDate = enteredDate;
     }
+    public Set getImsManageorderdetailses() {
+        return this.imsManageorderdetailses;
+    }
+    
+    public void setImsManageorderdetailses(Set imsManageorderdetailses) {
+        this.imsManageorderdetailses = imsManageorderdetailses;
+    }
     public Set getImsSalesproductdetailses() {
         return this.imsSalesproductdetailses;
     }
     
     public void setImsSalesproductdetailses(Set imsSalesproductdetailses) {
         this.imsSalesproductdetailses = imsSalesproductdetailses;
-    }
-    public Set getImsSalesproductdetailses_1() {
-        return this.imsSalesproductdetailses_1;
-    }
-    
-    public void setImsSalesproductdetailses_1(Set imsSalesproductdetailses_1) {
-        this.imsSalesproductdetailses_1 = imsSalesproductdetailses_1;
-    }
-    public Set getImsOrderdetailses() {
-        return this.imsOrderdetailses;
-    }
-    
-    public void setImsOrderdetailses(Set imsOrderdetailses) {
-        this.imsOrderdetailses = imsOrderdetailses;
     }
     public ImsStockdetails getImsStockdetails() {
         return this.imsStockdetails;
@@ -155,26 +144,19 @@ public class ImsProductdetails  implements java.io.Serializable {
     public void setImsStockdetails(ImsStockdetails imsStockdetails) {
         this.imsStockdetails = imsStockdetails;
     }
+    public Set getImsOrderdetailses() {
+        return this.imsOrderdetailses;
+    }
+    
+    public void setImsOrderdetailses(Set imsOrderdetailses) {
+        this.imsOrderdetailses = imsOrderdetailses;
+    }
     public Set getImsPurchaseproductdetailses() {
         return this.imsPurchaseproductdetailses;
     }
     
     public void setImsPurchaseproductdetailses(Set imsPurchaseproductdetailses) {
         this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-    }
-    public Set getImsPurchaseproductdetailses_1() {
-        return this.imsPurchaseproductdetailses_1;
-    }
-    
-    public void setImsPurchaseproductdetailses_1(Set imsPurchaseproductdetailses_1) {
-        this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
-    }
-    public Set getImsOrderdetailses_1() {
-        return this.imsOrderdetailses_1;
-    }
-    
-    public void setImsOrderdetailses_1(Set imsOrderdetailses_1) {
-        this.imsOrderdetailses_1 = imsOrderdetailses_1;
     }
 
 

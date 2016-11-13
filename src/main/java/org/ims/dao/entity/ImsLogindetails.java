@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -20,36 +20,24 @@ public class ImsLogindetails  implements java.io.Serializable {
      private Date loginDate;
      private Long enteredBy;
      private Date enteredDate;
-     private Set imsOptionrightses = new HashSet(0);
-     private Set imsOptionrightses_1 = new HashSet(0);
-     private Set imsGrouprightses = new HashSet(0);
-     private Set imsBanktransactionses = new HashSet(0);
-     private Set imsProductcategories = new HashSet(0);
-     private Set imsOrderdetailses = new HashSet(0);
-     private Set imsSuppliermasters = new HashSet(0);
      private Set imsPurchaseproductdetailses = new HashSet(0);
-     private Set imsSuppliersauthorizers = new HashSet(0);
-     private Set imsGrouprightses_1 = new HashSet(0);
+     private Set imsSuppliermasters = new HashSet(0);
      private Set imsTransactiondetailses = new HashSet(0);
-     private Set imsPurchasemasters = new HashSet(0);
-     private Set imsDealersauthorizers = new HashSet(0);
-     private Set imsProductdetailses = new HashSet(0);
-     private Set imsBanktransactionses_1 = new HashSet(0);
-     private Set imsPartnerdetailses = new HashSet(0);
-     private Set imsProductcategories_1 = new HashSet(0);
-     private Set imsPartnerdetailses_1 = new HashSet(0);
-     private Set imsStockdetailses = new HashSet(0);
-     private Set imsTransactiondetailses_1 = new HashSet(0);
+     private Set imsBanktransactionses = new HashSet(0);
      private Set imsDealermasters = new HashSet(0);
-     private Set imsPurchasemasters_1 = new HashSet(0);
-     private Set imsPurchaseproductdetailses_1 = new HashSet(0);
-     private Set imsSuppliersauthorizers_1 = new HashSet(0);
-     private Set imsDealermasters_1 = new HashSet(0);
+     private Set imsStockdetailses = new HashSet(0);
+     private Set imsGrouprightses = new HashSet(0);
+     private Set imsSuppliersauthorizers = new HashSet(0);
+     private Set imsOrderdetailses = new HashSet(0);
+     private Set imsDealersauthorizers = new HashSet(0);
+     private Set imsManageorderdetailses = new HashSet(0);
+     private Set imsProductdetailses = new HashSet(0);
+     private Set imsManageorderses = new HashSet(0);
+     private Set imsPartnerdetailses = new HashSet(0);
      private Set imsGenraldefinitions = new HashSet(0);
-     private Set imsDealersauthorizers_1 = new HashSet(0);
-     private Set imsSuppliermasters_1 = new HashSet(0);
-     private Set imsOrderdetailses_1 = new HashSet(0);
-     private Set imsGenraldefinitions_1 = new HashSet(0);
+     private Set imsOptionrightses = new HashSet(0);
+     private Set imsProductcategories = new HashSet(0);
+     private Set imsPurchasemasters = new HashSet(0);
 
     public ImsLogindetails() {
     }
@@ -61,7 +49,7 @@ public class ImsLogindetails  implements java.io.Serializable {
         this.userPassword = userPassword;
         this.loginStatus = loginStatus;
     }
-    public ImsLogindetails(long userId, ImsEmployee imsEmployee, String userName, String userPassword, boolean loginStatus, Date loginDate, Long enteredBy, Date enteredDate, Set imsOptionrightses, Set imsOptionrightses_1, Set imsGrouprightses, Set imsBanktransactionses, Set imsProductcategories, Set imsOrderdetailses, Set imsSuppliermasters, Set imsPurchaseproductdetailses, Set imsSuppliersauthorizers, Set imsGrouprightses_1, Set imsTransactiondetailses, Set imsPurchasemasters, Set imsDealersauthorizers, Set imsProductdetailses, Set imsBanktransactionses_1, Set imsPartnerdetailses, Set imsProductcategories_1, Set imsPartnerdetailses_1, Set imsStockdetailses, Set imsTransactiondetailses_1, Set imsDealermasters, Set imsPurchasemasters_1, Set imsPurchaseproductdetailses_1, Set imsSuppliersauthorizers_1, Set imsDealermasters_1, Set imsGenraldefinitions, Set imsDealersauthorizers_1, Set imsSuppliermasters_1, Set imsOrderdetailses_1, Set imsGenraldefinitions_1) {
+    public ImsLogindetails(long userId, ImsEmployee imsEmployee, String userName, String userPassword, boolean loginStatus, Date loginDate, Long enteredBy, Date enteredDate, Set imsPurchaseproductdetailses, Set imsSuppliermasters, Set imsTransactiondetailses, Set imsBanktransactionses, Set imsDealermasters, Set imsStockdetailses, Set imsGrouprightses, Set imsSuppliersauthorizers, Set imsOrderdetailses, Set imsDealersauthorizers, Set imsManageorderdetailses, Set imsProductdetailses, Set imsManageorderses, Set imsPartnerdetailses, Set imsGenraldefinitions, Set imsOptionrightses, Set imsProductcategories, Set imsPurchasemasters) {
        this.userId = userId;
        this.imsEmployee = imsEmployee;
        this.userName = userName;
@@ -70,36 +58,24 @@ public class ImsLogindetails  implements java.io.Serializable {
        this.loginDate = loginDate;
        this.enteredBy = enteredBy;
        this.enteredDate = enteredDate;
-       this.imsOptionrightses = imsOptionrightses;
-       this.imsOptionrightses_1 = imsOptionrightses_1;
-       this.imsGrouprightses = imsGrouprightses;
-       this.imsBanktransactionses = imsBanktransactionses;
-       this.imsProductcategories = imsProductcategories;
-       this.imsOrderdetailses = imsOrderdetailses;
-       this.imsSuppliermasters = imsSuppliermasters;
        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-       this.imsSuppliersauthorizers = imsSuppliersauthorizers;
-       this.imsGrouprightses_1 = imsGrouprightses_1;
+       this.imsSuppliermasters = imsSuppliermasters;
        this.imsTransactiondetailses = imsTransactiondetailses;
-       this.imsPurchasemasters = imsPurchasemasters;
-       this.imsDealersauthorizers = imsDealersauthorizers;
-       this.imsProductdetailses = imsProductdetailses;
-       this.imsBanktransactionses_1 = imsBanktransactionses_1;
-       this.imsPartnerdetailses = imsPartnerdetailses;
-       this.imsProductcategories_1 = imsProductcategories_1;
-       this.imsPartnerdetailses_1 = imsPartnerdetailses_1;
-       this.imsStockdetailses = imsStockdetailses;
-       this.imsTransactiondetailses_1 = imsTransactiondetailses_1;
+       this.imsBanktransactionses = imsBanktransactionses;
        this.imsDealermasters = imsDealermasters;
-       this.imsPurchasemasters_1 = imsPurchasemasters_1;
-       this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
-       this.imsSuppliersauthorizers_1 = imsSuppliersauthorizers_1;
-       this.imsDealermasters_1 = imsDealermasters_1;
+       this.imsStockdetailses = imsStockdetailses;
+       this.imsGrouprightses = imsGrouprightses;
+       this.imsSuppliersauthorizers = imsSuppliersauthorizers;
+       this.imsOrderdetailses = imsOrderdetailses;
+       this.imsDealersauthorizers = imsDealersauthorizers;
+       this.imsManageorderdetailses = imsManageorderdetailses;
+       this.imsProductdetailses = imsProductdetailses;
+       this.imsManageorderses = imsManageorderses;
+       this.imsPartnerdetailses = imsPartnerdetailses;
        this.imsGenraldefinitions = imsGenraldefinitions;
-       this.imsDealersauthorizers_1 = imsDealersauthorizers_1;
-       this.imsSuppliermasters_1 = imsSuppliermasters_1;
-       this.imsOrderdetailses_1 = imsOrderdetailses_1;
-       this.imsGenraldefinitions_1 = imsGenraldefinitions_1;
+       this.imsOptionrightses = imsOptionrightses;
+       this.imsProductcategories = imsProductcategories;
+       this.imsPurchasemasters = imsPurchasemasters;
     }
    
     public long getUserId() {
@@ -158,47 +134,12 @@ public class ImsLogindetails  implements java.io.Serializable {
     public void setEnteredDate(Date enteredDate) {
         this.enteredDate = enteredDate;
     }
-    public Set getImsOptionrightses() {
-        return this.imsOptionrightses;
+    public Set getImsPurchaseproductdetailses() {
+        return this.imsPurchaseproductdetailses;
     }
     
-    public void setImsOptionrightses(Set imsOptionrightses) {
-        this.imsOptionrightses = imsOptionrightses;
-    }
-    public Set getImsOptionrightses_1() {
-        return this.imsOptionrightses_1;
-    }
-    
-    public void setImsOptionrightses_1(Set imsOptionrightses_1) {
-        this.imsOptionrightses_1 = imsOptionrightses_1;
-    }
-    public Set getImsGrouprightses() {
-        return this.imsGrouprightses;
-    }
-    
-    public void setImsGrouprightses(Set imsGrouprightses) {
-        this.imsGrouprightses = imsGrouprightses;
-    }
-    public Set getImsBanktransactionses() {
-        return this.imsBanktransactionses;
-    }
-    
-    public void setImsBanktransactionses(Set imsBanktransactionses) {
-        this.imsBanktransactionses = imsBanktransactionses;
-    }
-    public Set getImsProductcategories() {
-        return this.imsProductcategories;
-    }
-    
-    public void setImsProductcategories(Set imsProductcategories) {
-        this.imsProductcategories = imsProductcategories;
-    }
-    public Set getImsOrderdetailses() {
-        return this.imsOrderdetailses;
-    }
-    
-    public void setImsOrderdetailses(Set imsOrderdetailses) {
-        this.imsOrderdetailses = imsOrderdetailses;
+    public void setImsPurchaseproductdetailses(Set imsPurchaseproductdetailses) {
+        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
     }
     public Set getImsSuppliermasters() {
         return this.imsSuppliermasters;
@@ -207,27 +148,6 @@ public class ImsLogindetails  implements java.io.Serializable {
     public void setImsSuppliermasters(Set imsSuppliermasters) {
         this.imsSuppliermasters = imsSuppliermasters;
     }
-    public Set getImsPurchaseproductdetailses() {
-        return this.imsPurchaseproductdetailses;
-    }
-    
-    public void setImsPurchaseproductdetailses(Set imsPurchaseproductdetailses) {
-        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-    }
-    public Set getImsSuppliersauthorizers() {
-        return this.imsSuppliersauthorizers;
-    }
-    
-    public void setImsSuppliersauthorizers(Set imsSuppliersauthorizers) {
-        this.imsSuppliersauthorizers = imsSuppliersauthorizers;
-    }
-    public Set getImsGrouprightses_1() {
-        return this.imsGrouprightses_1;
-    }
-    
-    public void setImsGrouprightses_1(Set imsGrouprightses_1) {
-        this.imsGrouprightses_1 = imsGrouprightses_1;
-    }
     public Set getImsTransactiondetailses() {
         return this.imsTransactiondetailses;
     }
@@ -235,68 +155,12 @@ public class ImsLogindetails  implements java.io.Serializable {
     public void setImsTransactiondetailses(Set imsTransactiondetailses) {
         this.imsTransactiondetailses = imsTransactiondetailses;
     }
-    public Set getImsPurchasemasters() {
-        return this.imsPurchasemasters;
+    public Set getImsBanktransactionses() {
+        return this.imsBanktransactionses;
     }
     
-    public void setImsPurchasemasters(Set imsPurchasemasters) {
-        this.imsPurchasemasters = imsPurchasemasters;
-    }
-    public Set getImsDealersauthorizers() {
-        return this.imsDealersauthorizers;
-    }
-    
-    public void setImsDealersauthorizers(Set imsDealersauthorizers) {
-        this.imsDealersauthorizers = imsDealersauthorizers;
-    }
-    public Set getImsProductdetailses() {
-        return this.imsProductdetailses;
-    }
-    
-    public void setImsProductdetailses(Set imsProductdetailses) {
-        this.imsProductdetailses = imsProductdetailses;
-    }
-    public Set getImsBanktransactionses_1() {
-        return this.imsBanktransactionses_1;
-    }
-    
-    public void setImsBanktransactionses_1(Set imsBanktransactionses_1) {
-        this.imsBanktransactionses_1 = imsBanktransactionses_1;
-    }
-    public Set getImsPartnerdetailses() {
-        return this.imsPartnerdetailses;
-    }
-    
-    public void setImsPartnerdetailses(Set imsPartnerdetailses) {
-        this.imsPartnerdetailses = imsPartnerdetailses;
-    }
-    public Set getImsProductcategories_1() {
-        return this.imsProductcategories_1;
-    }
-    
-    public void setImsProductcategories_1(Set imsProductcategories_1) {
-        this.imsProductcategories_1 = imsProductcategories_1;
-    }
-    public Set getImsPartnerdetailses_1() {
-        return this.imsPartnerdetailses_1;
-    }
-    
-    public void setImsPartnerdetailses_1(Set imsPartnerdetailses_1) {
-        this.imsPartnerdetailses_1 = imsPartnerdetailses_1;
-    }
-    public Set getImsStockdetailses() {
-        return this.imsStockdetailses;
-    }
-    
-    public void setImsStockdetailses(Set imsStockdetailses) {
-        this.imsStockdetailses = imsStockdetailses;
-    }
-    public Set getImsTransactiondetailses_1() {
-        return this.imsTransactiondetailses_1;
-    }
-    
-    public void setImsTransactiondetailses_1(Set imsTransactiondetailses_1) {
-        this.imsTransactiondetailses_1 = imsTransactiondetailses_1;
+    public void setImsBanktransactionses(Set imsBanktransactionses) {
+        this.imsBanktransactionses = imsBanktransactionses;
     }
     public Set getImsDealermasters() {
         return this.imsDealermasters;
@@ -305,33 +169,68 @@ public class ImsLogindetails  implements java.io.Serializable {
     public void setImsDealermasters(Set imsDealermasters) {
         this.imsDealermasters = imsDealermasters;
     }
-    public Set getImsPurchasemasters_1() {
-        return this.imsPurchasemasters_1;
+    public Set getImsStockdetailses() {
+        return this.imsStockdetailses;
     }
     
-    public void setImsPurchasemasters_1(Set imsPurchasemasters_1) {
-        this.imsPurchasemasters_1 = imsPurchasemasters_1;
+    public void setImsStockdetailses(Set imsStockdetailses) {
+        this.imsStockdetailses = imsStockdetailses;
     }
-    public Set getImsPurchaseproductdetailses_1() {
-        return this.imsPurchaseproductdetailses_1;
-    }
-    
-    public void setImsPurchaseproductdetailses_1(Set imsPurchaseproductdetailses_1) {
-        this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
-    }
-    public Set getImsSuppliersauthorizers_1() {
-        return this.imsSuppliersauthorizers_1;
+    public Set getImsGrouprightses() {
+        return this.imsGrouprightses;
     }
     
-    public void setImsSuppliersauthorizers_1(Set imsSuppliersauthorizers_1) {
-        this.imsSuppliersauthorizers_1 = imsSuppliersauthorizers_1;
+    public void setImsGrouprightses(Set imsGrouprightses) {
+        this.imsGrouprightses = imsGrouprightses;
     }
-    public Set getImsDealermasters_1() {
-        return this.imsDealermasters_1;
+    public Set getImsSuppliersauthorizers() {
+        return this.imsSuppliersauthorizers;
     }
     
-    public void setImsDealermasters_1(Set imsDealermasters_1) {
-        this.imsDealermasters_1 = imsDealermasters_1;
+    public void setImsSuppliersauthorizers(Set imsSuppliersauthorizers) {
+        this.imsSuppliersauthorizers = imsSuppliersauthorizers;
+    }
+    public Set getImsOrderdetailses() {
+        return this.imsOrderdetailses;
+    }
+    
+    public void setImsOrderdetailses(Set imsOrderdetailses) {
+        this.imsOrderdetailses = imsOrderdetailses;
+    }
+    public Set getImsDealersauthorizers() {
+        return this.imsDealersauthorizers;
+    }
+    
+    public void setImsDealersauthorizers(Set imsDealersauthorizers) {
+        this.imsDealersauthorizers = imsDealersauthorizers;
+    }
+    public Set getImsManageorderdetailses() {
+        return this.imsManageorderdetailses;
+    }
+    
+    public void setImsManageorderdetailses(Set imsManageorderdetailses) {
+        this.imsManageorderdetailses = imsManageorderdetailses;
+    }
+    public Set getImsProductdetailses() {
+        return this.imsProductdetailses;
+    }
+    
+    public void setImsProductdetailses(Set imsProductdetailses) {
+        this.imsProductdetailses = imsProductdetailses;
+    }
+    public Set getImsManageorderses() {
+        return this.imsManageorderses;
+    }
+    
+    public void setImsManageorderses(Set imsManageorderses) {
+        this.imsManageorderses = imsManageorderses;
+    }
+    public Set getImsPartnerdetailses() {
+        return this.imsPartnerdetailses;
+    }
+    
+    public void setImsPartnerdetailses(Set imsPartnerdetailses) {
+        this.imsPartnerdetailses = imsPartnerdetailses;
     }
     public Set getImsGenraldefinitions() {
         return this.imsGenraldefinitions;
@@ -340,33 +239,26 @@ public class ImsLogindetails  implements java.io.Serializable {
     public void setImsGenraldefinitions(Set imsGenraldefinitions) {
         this.imsGenraldefinitions = imsGenraldefinitions;
     }
-    public Set getImsDealersauthorizers_1() {
-        return this.imsDealersauthorizers_1;
+    public Set getImsOptionrightses() {
+        return this.imsOptionrightses;
     }
     
-    public void setImsDealersauthorizers_1(Set imsDealersauthorizers_1) {
-        this.imsDealersauthorizers_1 = imsDealersauthorizers_1;
+    public void setImsOptionrightses(Set imsOptionrightses) {
+        this.imsOptionrightses = imsOptionrightses;
     }
-    public Set getImsSuppliermasters_1() {
-        return this.imsSuppliermasters_1;
-    }
-    
-    public void setImsSuppliermasters_1(Set imsSuppliermasters_1) {
-        this.imsSuppliermasters_1 = imsSuppliermasters_1;
-    }
-    public Set getImsOrderdetailses_1() {
-        return this.imsOrderdetailses_1;
+    public Set getImsProductcategories() {
+        return this.imsProductcategories;
     }
     
-    public void setImsOrderdetailses_1(Set imsOrderdetailses_1) {
-        this.imsOrderdetailses_1 = imsOrderdetailses_1;
+    public void setImsProductcategories(Set imsProductcategories) {
+        this.imsProductcategories = imsProductcategories;
     }
-    public Set getImsGenraldefinitions_1() {
-        return this.imsGenraldefinitions_1;
+    public Set getImsPurchasemasters() {
+        return this.imsPurchasemasters;
     }
     
-    public void setImsGenraldefinitions_1(Set imsGenraldefinitions_1) {
-        this.imsGenraldefinitions_1 = imsGenraldefinitions_1;
+    public void setImsPurchasemasters(Set imsPurchasemasters) {
+        this.imsPurchasemasters = imsPurchasemasters;
     }
 
 

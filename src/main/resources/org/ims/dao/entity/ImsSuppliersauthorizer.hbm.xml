@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsSuppliersauthorizer" table="ims_suppliersauthorizer" catalog="IMS_DB" optimistic-lock="version">
+        <id name="authrizerId" type="string">
+            <column name="AuthrizerID" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" not-null="true" />
+        </many-to-one>
+        <many-to-one name="imsSuppliermaster" class="org.ims.dao.entity.ImsSuppliermaster" fetch="select">
+            <column name="SupplierNumber" length="5" not-null="true" />
+        </many-to-one>
+        <property name="authrizerName" type="string">
+            <column name="AuthrizerName" length="100" not-null="true" />
+        </property>
+        <property name="phoneNo" type="string">
+            <column name="PhoneNo" length="20" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="EmailId" length="50" />
+        </property>
+        <property name="authorizerPhoto" type="binary">
+            <column name="AuthorizerPhoto" />
+        </property>
+        <property name="pannumber" type="string">
+            <column name="PANNumber" length="25" not-null="true" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+        <property name="otherDetails" type="string">
+            <column name="OtherDetails" length="250" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="Status" />
+        </property>
+    </class>
+</hibernate-mapping>

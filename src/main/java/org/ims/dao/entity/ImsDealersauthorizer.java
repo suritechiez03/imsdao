@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -9,10 +9,10 @@ import java.util.Date;
  */
 public class ImsDealersauthorizer  implements java.io.Serializable {
 
-     
+
      private String authrizerId;
-     private ImsLogindetails imsLogindetails;
      private ImsDealermaster imsDealermaster;
+     private ImsLogindetails imsLogindetails;
      private String authrizerName;
      private String phoneNo;
      private String emailId;
@@ -26,18 +26,18 @@ public class ImsDealersauthorizer  implements java.io.Serializable {
     }
 
 	
-    public ImsDealersauthorizer(String authrizerId, ImsLogindetails imsLogindetails, ImsDealermaster imsDealermaster, String authrizerName, String pannumber, Date enteredDate) {
+    public ImsDealersauthorizer(String authrizerId, ImsDealermaster imsDealermaster, ImsLogindetails imsLogindetails, String authrizerName, String pannumber, Date enteredDate) {
         this.authrizerId = authrizerId;
-        this.imsLogindetails = imsLogindetails;
         this.imsDealermaster = imsDealermaster;
+        this.imsLogindetails = imsLogindetails;
         this.authrizerName = authrizerName;
         this.pannumber = pannumber;
         this.enteredDate = enteredDate;
     }
-    public ImsDealersauthorizer(String authrizerId, ImsLogindetails imsLogindetails, ImsDealermaster imsDealermaster, String authrizerName, String phoneNo, String emailId, byte[] authorizerPhoto, String pannumber, Date enteredDate, String otherDetails, Boolean status) {
+    public ImsDealersauthorizer(String authrizerId, ImsDealermaster imsDealermaster, ImsLogindetails imsLogindetails, String authrizerName, String phoneNo, String emailId, byte[] authorizerPhoto, String pannumber, Date enteredDate, String otherDetails, Boolean status) {
        this.authrizerId = authrizerId;
-       this.imsLogindetails = imsLogindetails;
        this.imsDealermaster = imsDealermaster;
+       this.imsLogindetails = imsLogindetails;
        this.authrizerName = authrizerName;
        this.phoneNo = phoneNo;
        this.emailId = emailId;
@@ -55,19 +55,19 @@ public class ImsDealersauthorizer  implements java.io.Serializable {
     public void setAuthrizerId(String authrizerId) {
         this.authrizerId = authrizerId;
     }
-    public ImsLogindetails getImsLogindetails() {
-        return this.imsLogindetails;
-    }
-    
-    public void setImsLogindetails(ImsLogindetails imsLogindetails) {
-        this.imsLogindetails = imsLogindetails;
-    }
     public ImsDealermaster getImsDealermaster() {
         return this.imsDealermaster;
     }
     
     public void setImsDealermaster(ImsDealermaster imsDealermaster) {
         this.imsDealermaster = imsDealermaster;
+    }
+    public ImsLogindetails getImsLogindetails() {
+        return this.imsLogindetails;
+    }
+    
+    public void setImsLogindetails(ImsLogindetails imsLogindetails) {
+        this.imsLogindetails = imsLogindetails;
     }
     public String getAuthrizerName() {
         return this.authrizerName;

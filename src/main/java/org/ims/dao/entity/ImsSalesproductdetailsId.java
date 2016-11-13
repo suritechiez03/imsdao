@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -37,6 +37,23 @@ public class ImsSalesproductdetailsId  implements java.io.Serializable {
     }
 
 
+   public boolean equals(Object other) {
+         if ( (this == other ) ) return true;
+		 if ( (other == null ) ) return false;
+		 if ( !(other instanceof ImsSalesproductdetailsId) ) return false;
+		 ImsSalesproductdetailsId castOther = ( ImsSalesproductdetailsId ) other; 
+         
+		 return ( (this.getTransactionId()==castOther.getTransactionId()) || ( this.getTransactionId()!=null && castOther.getTransactionId()!=null && this.getTransactionId().equals(castOther.getTransactionId()) ) )
+ && ( (this.getInvoiceNo()==castOther.getInvoiceNo()) || ( this.getInvoiceNo()!=null && castOther.getInvoiceNo()!=null && this.getInvoiceNo().equals(castOther.getInvoiceNo()) ) );
+   }
+   
+   public int hashCode() {
+         int result = 17;
+         
+         result = 37 * result + ( getTransactionId() == null ? 0 : this.getTransactionId().hashCode() );
+         result = 37 * result + ( getInvoiceNo() == null ? 0 : this.getInvoiceNo().hashCode() );
+         return result;
+   }   
 
 
 }

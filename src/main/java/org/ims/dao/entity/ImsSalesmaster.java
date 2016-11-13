@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -48,7 +48,6 @@ public class ImsSalesmaster  implements java.io.Serializable {
      private Long enteredBy;
      private Date enteredDate;
      private Set imsSalesproductdetailses = new HashSet(0);
-     private Set imsSalesproductdetailses_1 = new HashSet(0);
 
     public ImsSalesmaster() {
     }
@@ -57,7 +56,7 @@ public class ImsSalesmaster  implements java.io.Serializable {
     public ImsSalesmaster(String invoiceNo) {
         this.invoiceNo = invoiceNo;
     }
-    public ImsSalesmaster(String invoiceNo, String cashOrCredit, Integer orderNo, String repName, String invoiceDate, String invoiceTime, String paymentDueDate, String paymentTerms, String frieghtTerms, String deliveryTerm, String transporter, String transportMode, String esugmaNo, String destination, String lrnoAndDate, String exptdDelivery, String noOfPack, String grossWieght, Double vatfafcharges, Double freightAndFwdCharges, Double grossTotalAmount2, Double excisePercentage, Double exciseRate, Double educationCessPercentage, Double educCessRate, Double secEducCessPercentage, Double secEducCessRate, Double cstpercentage, Double cstrate, Double vattotal1, Double vattotal2, Double roundOff, Double totalAmount, Long enteredBy, Date enteredDate, Set imsSalesproductdetailses, Set imsSalesproductdetailses_1) {
+    public ImsSalesmaster(String invoiceNo, String cashOrCredit, Integer orderNo, String repName, String invoiceDate, String invoiceTime, String paymentDueDate, String paymentTerms, String frieghtTerms, String deliveryTerm, String transporter, String transportMode, String esugmaNo, String destination, String lrnoAndDate, String exptdDelivery, String noOfPack, String grossWieght, Double vatfafcharges, Double freightAndFwdCharges, Double grossTotalAmount2, Double excisePercentage, Double exciseRate, Double educationCessPercentage, Double educCessRate, Double secEducCessPercentage, Double secEducCessRate, Double cstpercentage, Double cstrate, Double vattotal1, Double vattotal2, Double roundOff, Double totalAmount, Long enteredBy, Date enteredDate, Set imsSalesproductdetailses) {
        this.invoiceNo = invoiceNo;
        this.cashOrCredit = cashOrCredit;
        this.orderNo = orderNo;
@@ -94,7 +93,6 @@ public class ImsSalesmaster  implements java.io.Serializable {
        this.enteredBy = enteredBy;
        this.enteredDate = enteredDate;
        this.imsSalesproductdetailses = imsSalesproductdetailses;
-       this.imsSalesproductdetailses_1 = imsSalesproductdetailses_1;
     }
    
     public String getInvoiceNo() {
@@ -348,13 +346,6 @@ public class ImsSalesmaster  implements java.io.Serializable {
     
     public void setImsSalesproductdetailses(Set imsSalesproductdetailses) {
         this.imsSalesproductdetailses = imsSalesproductdetailses;
-    }
-    public Set getImsSalesproductdetailses_1() {
-        return this.imsSalesproductdetailses_1;
-    }
-    
-    public void setImsSalesproductdetailses_1(Set imsSalesproductdetailses_1) {
-        this.imsSalesproductdetailses_1 = imsSalesproductdetailses_1;
     }
 
 

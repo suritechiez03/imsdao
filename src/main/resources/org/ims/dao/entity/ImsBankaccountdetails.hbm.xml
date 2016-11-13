@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsBankaccountdetails" table="ims_bankaccountdetails" catalog="IMS_DB" optimistic-lock="version">
+        <id name="accountNo" type="string">
+            <column name="AccountNo" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="supplierOrdealerNo" type="string">
+            <column name="SupplierORDealerNo" length="5" />
+        </property>
+        <property name="bankName" type="string">
+            <column name="BankName" length="100" />
+        </property>
+        <property name="customerType" type="java.lang.Character">
+            <column name="CustomerType" length="1" />
+        </property>
+        <property name="enteredBy" type="java.lang.Long">
+            <column name="EnteredBy" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

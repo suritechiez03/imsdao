@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -25,10 +25,8 @@ public class ImsSuppliermaster  implements java.io.Serializable {
      private String offlicePhNumber;
      private Date enteredDate;
      private Boolean status;
-     private Set imsSuppliersauthorizers = new HashSet(0);
-     private Set imsSuppliersauthorizers_1 = new HashSet(0);
      private Set imsPurchasemasters = new HashSet(0);
-     private Set imsPurchasemasters_1 = new HashSet(0);
+     private Set imsSuppliersauthorizers = new HashSet(0);
 
     public ImsSuppliermaster() {
     }
@@ -42,7 +40,7 @@ public class ImsSuppliermaster  implements java.io.Serializable {
         this.cstnumber = cstnumber;
         this.enteredDate = enteredDate;
     }
-    public ImsSuppliermaster(String supplierNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status, Set imsSuppliersauthorizers, Set imsSuppliersauthorizers_1, Set imsPurchasemasters, Set imsPurchasemasters_1) {
+    public ImsSuppliermaster(String supplierNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status, Set imsPurchasemasters, Set imsSuppliersauthorizers) {
        this.supplierNumber = supplierNumber;
        this.imsLogindetails = imsLogindetails;
        this.companyName = companyName;
@@ -56,10 +54,8 @@ public class ImsSuppliermaster  implements java.io.Serializable {
        this.offlicePhNumber = offlicePhNumber;
        this.enteredDate = enteredDate;
        this.status = status;
-       this.imsSuppliersauthorizers = imsSuppliersauthorizers;
-       this.imsSuppliersauthorizers_1 = imsSuppliersauthorizers_1;
        this.imsPurchasemasters = imsPurchasemasters;
-       this.imsPurchasemasters_1 = imsPurchasemasters_1;
+       this.imsSuppliersauthorizers = imsSuppliersauthorizers;
     }
    
     public String getSupplierNumber() {
@@ -153,20 +149,6 @@ public class ImsSuppliermaster  implements java.io.Serializable {
     public void setStatus(Boolean status) {
         this.status = status;
     }
-    public Set getImsSuppliersauthorizers() {
-        return this.imsSuppliersauthorizers;
-    }
-    
-    public void setImsSuppliersauthorizers(Set imsSuppliersauthorizers) {
-        this.imsSuppliersauthorizers = imsSuppliersauthorizers;
-    }
-    public Set getImsSuppliersauthorizers_1() {
-        return this.imsSuppliersauthorizers_1;
-    }
-    
-    public void setImsSuppliersauthorizers_1(Set imsSuppliersauthorizers_1) {
-        this.imsSuppliersauthorizers_1 = imsSuppliersauthorizers_1;
-    }
     public Set getImsPurchasemasters() {
         return this.imsPurchasemasters;
     }
@@ -174,12 +156,12 @@ public class ImsSuppliermaster  implements java.io.Serializable {
     public void setImsPurchasemasters(Set imsPurchasemasters) {
         this.imsPurchasemasters = imsPurchasemasters;
     }
-    public Set getImsPurchasemasters_1() {
-        return this.imsPurchasemasters_1;
+    public Set getImsSuppliersauthorizers() {
+        return this.imsSuppliersauthorizers;
     }
     
-    public void setImsPurchasemasters_1(Set imsPurchasemasters_1) {
-        this.imsPurchasemasters_1 = imsPurchasemasters_1;
+    public void setImsSuppliersauthorizers(Set imsSuppliersauthorizers) {
+        this.imsSuppliersauthorizers = imsSuppliersauthorizers;
     }
 
 

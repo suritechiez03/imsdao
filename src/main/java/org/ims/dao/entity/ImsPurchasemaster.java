@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,8 +14,8 @@ public class ImsPurchasemaster  implements java.io.Serializable {
 
 
      private String pinvoiceId;
-     private ImsSuppliermaster imsSuppliermaster;
      private ImsLogindetails imsLogindetails;
+     private ImsSuppliermaster imsSuppliermaster;
      private String cashorCredit;
      private String supplierOrderNo;
      private String repName;
@@ -50,7 +50,6 @@ public class ImsPurchasemaster  implements java.io.Serializable {
      private BigDecimal totalAmount;
      private Date enteredDate;
      private Set imsPurchaseproductdetailses = new HashSet(0);
-     private Set imsPurchaseproductdetailses_1 = new HashSet(0);
 
     public ImsPurchasemaster() {
     }
@@ -61,10 +60,10 @@ public class ImsPurchasemaster  implements java.io.Serializable {
         this.imsSuppliermaster = imsSuppliermaster;
         this.cashorCredit = cashorCredit;
     }
-    public ImsPurchasemaster(String pinvoiceId, ImsSuppliermaster imsSuppliermaster, ImsLogindetails imsLogindetails, String cashorCredit, String supplierOrderNo, String repName, Date supplierInvoiceDate, Date paymentDueDate, String paymentTerms, String frieghtTerm, String deliverlyTerm, String transporter, String transportMode, String esugamaNo, String destination, String lrnoandDate, Date expectedDelivary, Long noPacks, BigDecimal grossWeight, Long totalNoproducts, BigDecimal vatfaf, BigDecimal vatfafrate, BigDecimal grossTotal, BigDecimal excessPercentage, BigDecimal excessRate, BigDecimal educationCessPercentage, BigDecimal educationCessRate, BigDecimal secondaryEducationCessPercentage, BigDecimal secondaryEducationCessRate, BigDecimal cstpercentage, BigDecimal cstrate, BigDecimal vattotal1, BigDecimal vattotal2, BigDecimal roundOff, BigDecimal totalAmount, Date enteredDate, Set imsPurchaseproductdetailses, Set imsPurchaseproductdetailses_1) {
+    public ImsPurchasemaster(String pinvoiceId, ImsLogindetails imsLogindetails, ImsSuppliermaster imsSuppliermaster, String cashorCredit, String supplierOrderNo, String repName, Date supplierInvoiceDate, Date paymentDueDate, String paymentTerms, String frieghtTerm, String deliverlyTerm, String transporter, String transportMode, String esugamaNo, String destination, String lrnoandDate, Date expectedDelivary, Long noPacks, BigDecimal grossWeight, Long totalNoproducts, BigDecimal vatfaf, BigDecimal vatfafrate, BigDecimal grossTotal, BigDecimal excessPercentage, BigDecimal excessRate, BigDecimal educationCessPercentage, BigDecimal educationCessRate, BigDecimal secondaryEducationCessPercentage, BigDecimal secondaryEducationCessRate, BigDecimal cstpercentage, BigDecimal cstrate, BigDecimal vattotal1, BigDecimal vattotal2, BigDecimal roundOff, BigDecimal totalAmount, Date enteredDate, Set imsPurchaseproductdetailses) {
        this.pinvoiceId = pinvoiceId;
-       this.imsSuppliermaster = imsSuppliermaster;
        this.imsLogindetails = imsLogindetails;
+       this.imsSuppliermaster = imsSuppliermaster;
        this.cashorCredit = cashorCredit;
        this.supplierOrderNo = supplierOrderNo;
        this.repName = repName;
@@ -99,7 +98,6 @@ public class ImsPurchasemaster  implements java.io.Serializable {
        this.totalAmount = totalAmount;
        this.enteredDate = enteredDate;
        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-       this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
     }
    
     public String getPinvoiceId() {
@@ -109,19 +107,19 @@ public class ImsPurchasemaster  implements java.io.Serializable {
     public void setPinvoiceId(String pinvoiceId) {
         this.pinvoiceId = pinvoiceId;
     }
-    public ImsSuppliermaster getImsSuppliermaster() {
-        return this.imsSuppliermaster;
-    }
-    
-    public void setImsSuppliermaster(ImsSuppliermaster imsSuppliermaster) {
-        this.imsSuppliermaster = imsSuppliermaster;
-    }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
     }
     
     public void setImsLogindetails(ImsLogindetails imsLogindetails) {
         this.imsLogindetails = imsLogindetails;
+    }
+    public ImsSuppliermaster getImsSuppliermaster() {
+        return this.imsSuppliermaster;
+    }
+    
+    public void setImsSuppliermaster(ImsSuppliermaster imsSuppliermaster) {
+        this.imsSuppliermaster = imsSuppliermaster;
     }
     public String getCashorCredit() {
         return this.cashorCredit;
@@ -360,13 +358,6 @@ public class ImsPurchasemaster  implements java.io.Serializable {
     
     public void setImsPurchaseproductdetailses(Set imsPurchaseproductdetailses) {
         this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
-    }
-    public Set getImsPurchaseproductdetailses_1() {
-        return this.imsPurchaseproductdetailses_1;
-    }
-    
-    public void setImsPurchaseproductdetailses_1(Set imsPurchaseproductdetailses_1) {
-        this.imsPurchaseproductdetailses_1 = imsPurchaseproductdetailses_1;
     }
 
 

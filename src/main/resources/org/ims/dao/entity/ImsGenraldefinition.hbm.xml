@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsGenraldefinition" table="ims_genraldefinition" catalog="IMS_DB" optimistic-lock="version">
+        <id name="gdCode" type="string">
+            <column name="GdCode" length="6" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" not-null="true" />
+        </many-to-one>
+        <property name="gdAbb" type="string">
+            <column name="GdAbb" length="3" />
+        </property>
+        <property name="gdName" type="string">
+            <column name="GdName" length="75" not-null="true" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+        <set name="imsEmployeesForDesgnation" table="ims_employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Desgnation" length="6" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsEmployee" />
+        </set>
+        <set name="imsEmployeesForIdProof" table="ims_employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdProof" length="6" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsEmployee" />
+        </set>
+    </class>
+</hibernate-mapping>

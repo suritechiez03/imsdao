@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsGrouprights" table="ims_grouprights" catalog="IMS_DB" optimistic-lock="version">
+        <id name="groupId" type="long">
+            <column name="GroupID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" not-null="true" />
+        </many-to-one>
+        <property name="groupName" type="string">
+            <column name="GroupName" length="50" not-null="true" />
+        </property>
+        <property name="groupRights" type="string">
+            <column name="GroupRights" length="65535" not-null="true" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+        <set name="imsEmployees" table="ims_employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="GroupID" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsEmployee" />
+        </set>
+    </class>
+</hibernate-mapping>

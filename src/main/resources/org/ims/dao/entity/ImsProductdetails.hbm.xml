@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsProductdetails" table="ims_productdetails" catalog="IMS_DB" optimistic-lock="version">
+        <id name="productCode" type="string">
+            <column name="ProductCode" length="30" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" />
+        </many-to-one>
+        <many-to-one name="imsProductcategory" class="org.ims.dao.entity.ImsProductcategory" fetch="select">
+            <column name="CategoryCode" length="30" />
+        </many-to-one>
+        <property name="productName" type="string">
+            <column name="ProductName" length="100" />
+        </property>
+        <property name="specificationAndThickNess" type="string">
+            <column name="SpecificationAndThickNess" length="45" />
+        </property>
+        <property name="units" type="string">
+            <column name="Units" length="45" />
+        </property>
+        <property name="size" type="string">
+            <column name="Size" length="45" />
+        </property>
+        <property name="moq" type="java.lang.Long">
+            <column name="MOQ" />
+        </property>
+        <property name="color" type="string">
+            <column name="Color" length="15" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+        <set name="imsManageorderdetailses" table="ims_manageorderdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProductCode" length="30" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsManageorderdetails" />
+        </set>
+        <set name="imsSalesproductdetailses" table="ims_salesproductdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProductCode" length="30" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsSalesproductdetails" />
+        </set>
+        <one-to-one name="imsStockdetails" class="org.ims.dao.entity.ImsStockdetails"></one-to-one>
+        <set name="imsOrderdetailses" table="ims_orderdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProductCode" length="30" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsOrderdetails" />
+        </set>
+        <set name="imsPurchaseproductdetailses" table="ims_purchaseproductdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProductCode" length="30" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsPurchaseproductdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

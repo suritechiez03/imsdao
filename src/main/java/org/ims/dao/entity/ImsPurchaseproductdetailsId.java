@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 
@@ -36,6 +36,23 @@ public class ImsPurchaseproductdetailsId  implements java.io.Serializable {
     }
 
 
+   public boolean equals(Object other) {
+         if ( (this == other ) ) return true;
+		 if ( (other == null ) ) return false;
+		 if ( !(other instanceof ImsPurchaseproductdetailsId) ) return false;
+		 ImsPurchaseproductdetailsId castOther = ( ImsPurchaseproductdetailsId ) other; 
+         
+		 return (this.getSerialNumber()==castOther.getSerialNumber())
+ && ( (this.getPinvoiceId()==castOther.getPinvoiceId()) || ( this.getPinvoiceId()!=null && castOther.getPinvoiceId()!=null && this.getPinvoiceId().equals(castOther.getPinvoiceId()) ) );
+   }
+   
+   public int hashCode() {
+         int result = 17;
+         
+         result = 37 * result + this.getSerialNumber();
+         result = 37 * result + ( getPinvoiceId() == null ? 0 : this.getPinvoiceId().hashCode() );
+         return result;
+   }   
 
 
 }

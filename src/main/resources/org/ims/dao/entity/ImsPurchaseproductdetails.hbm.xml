@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2016 9:33:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsPurchaseproductdetails" table="ims_purchaseproductdetails" catalog="IMS_DB" optimistic-lock="version">
+        <composite-id name="id" class="org.ims.dao.entity.ImsPurchaseproductdetailsId">
+            <key-property name="serialNumber" type="int">
+                <column name="SerialNumber" />
+            </key-property>
+            <key-property name="pinvoiceId" type="string">
+                <column name="PInvoiceId" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" not-null="true" />
+        </many-to-one>
+        <many-to-one name="imsProductdetails" class="org.ims.dao.entity.ImsProductdetails" fetch="select">
+            <column name="ProductCode" length="30" />
+        </many-to-one>
+        <many-to-one name="imsPurchasemaster" class="org.ims.dao.entity.ImsPurchasemaster" update="false" insert="false" fetch="select">
+            <column name="PInvoiceId" length="20" not-null="true" />
+        </many-to-one>
+        <property name="quantity" type="java.lang.Long">
+            <column name="Quantity" />
+        </property>
+        <property name="basicRate" type="big_decimal">
+            <column name="BasicRate" precision="15" scale="4" />
+        </property>
+        <property name="discount" type="big_decimal">
+            <column name="Discount" precision="4" />
+        </property>
+        <property name="vat" type="big_decimal">
+            <column name="VAT" precision="4" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="Amount" precision="15" scale="4" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

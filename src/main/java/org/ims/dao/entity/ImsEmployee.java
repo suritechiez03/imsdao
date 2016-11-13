@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,9 +13,9 @@ public class ImsEmployee  implements java.io.Serializable {
 
 
      private String employeeId;
+     private ImsGenraldefinition imsGenraldefinitionByDesgnation;
      private ImsGenraldefinition imsGenraldefinitionByIdProof;
      private ImsGrouprights imsGrouprights;
-     private ImsGenraldefinition imsGenraldefinitionByDesgnation;
      private String employeeName;
      private Date dob;
      private String address;
@@ -26,28 +26,27 @@ public class ImsEmployee  implements java.io.Serializable {
      private long enteredBy;
      private Date enteredDate;
      private Set imsLogindetailses = new HashSet(0);
-     private Set imsLogindetailses_1 = new HashSet(0);
 
     public ImsEmployee() {
     }
 
 	
-    public ImsEmployee(String employeeId, ImsGenraldefinition imsGenraldefinitionByIdProof, ImsGrouprights imsGrouprights, ImsGenraldefinition imsGenraldefinitionByDesgnation, String employeeName, Date dob, String phoneNo, long enteredBy, Date enteredDate) {
+    public ImsEmployee(String employeeId, ImsGenraldefinition imsGenraldefinitionByDesgnation, ImsGenraldefinition imsGenraldefinitionByIdProof, ImsGrouprights imsGrouprights, String employeeName, Date dob, String phoneNo, long enteredBy, Date enteredDate) {
         this.employeeId = employeeId;
+        this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
         this.imsGenraldefinitionByIdProof = imsGenraldefinitionByIdProof;
         this.imsGrouprights = imsGrouprights;
-        this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
         this.employeeName = employeeName;
         this.dob = dob;
         this.phoneNo = phoneNo;
         this.enteredBy = enteredBy;
         this.enteredDate = enteredDate;
     }
-    public ImsEmployee(String employeeId, ImsGenraldefinition imsGenraldefinitionByIdProof, ImsGrouprights imsGrouprights, ImsGenraldefinition imsGenraldefinitionByDesgnation, String employeeName, Date dob, String address, String phoneNo, String emailId, Date joinDate, Boolean status, long enteredBy, Date enteredDate, Set imsLogindetailses, Set imsLogindetailses_1) {
+    public ImsEmployee(String employeeId, ImsGenraldefinition imsGenraldefinitionByDesgnation, ImsGenraldefinition imsGenraldefinitionByIdProof, ImsGrouprights imsGrouprights, String employeeName, Date dob, String address, String phoneNo, String emailId, Date joinDate, Boolean status, long enteredBy, Date enteredDate, Set imsLogindetailses) {
        this.employeeId = employeeId;
+       this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
        this.imsGenraldefinitionByIdProof = imsGenraldefinitionByIdProof;
        this.imsGrouprights = imsGrouprights;
-       this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
        this.employeeName = employeeName;
        this.dob = dob;
        this.address = address;
@@ -58,7 +57,6 @@ public class ImsEmployee  implements java.io.Serializable {
        this.enteredBy = enteredBy;
        this.enteredDate = enteredDate;
        this.imsLogindetailses = imsLogindetailses;
-       this.imsLogindetailses_1 = imsLogindetailses_1;
     }
    
     public String getEmployeeId() {
@@ -67,6 +65,13 @@ public class ImsEmployee  implements java.io.Serializable {
     
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
+    }
+    public ImsGenraldefinition getImsGenraldefinitionByDesgnation() {
+        return this.imsGenraldefinitionByDesgnation;
+    }
+    
+    public void setImsGenraldefinitionByDesgnation(ImsGenraldefinition imsGenraldefinitionByDesgnation) {
+        this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
     }
     public ImsGenraldefinition getImsGenraldefinitionByIdProof() {
         return this.imsGenraldefinitionByIdProof;
@@ -81,13 +86,6 @@ public class ImsEmployee  implements java.io.Serializable {
     
     public void setImsGrouprights(ImsGrouprights imsGrouprights) {
         this.imsGrouprights = imsGrouprights;
-    }
-    public ImsGenraldefinition getImsGenraldefinitionByDesgnation() {
-        return this.imsGenraldefinitionByDesgnation;
-    }
-    
-    public void setImsGenraldefinitionByDesgnation(ImsGenraldefinition imsGenraldefinitionByDesgnation) {
-        this.imsGenraldefinitionByDesgnation = imsGenraldefinitionByDesgnation;
     }
     public String getEmployeeName() {
         return this.employeeName;
@@ -158,13 +156,6 @@ public class ImsEmployee  implements java.io.Serializable {
     
     public void setImsLogindetailses(Set imsLogindetailses) {
         this.imsLogindetailses = imsLogindetailses;
-    }
-    public Set getImsLogindetailses_1() {
-        return this.imsLogindetailses_1;
-    }
-    
-    public void setImsLogindetailses_1(Set imsLogindetailses_1) {
-        this.imsLogindetailses_1 = imsLogindetailses_1;
     }
 
 

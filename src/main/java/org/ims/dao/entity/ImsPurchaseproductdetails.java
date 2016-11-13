@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated 25 Jan, 2016 10:53:23 PM by Hibernate Tools 3.6.0
+// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -12,9 +12,9 @@ public class ImsPurchaseproductdetails  implements java.io.Serializable {
 
 
      private ImsPurchaseproductdetailsId id;
-     private ImsPurchasemaster imsPurchasemaster;
-     private ImsProductdetails imsProductdetails;
      private ImsLogindetails imsLogindetails;
+     private ImsProductdetails imsProductdetails;
+     private ImsPurchasemaster imsPurchasemaster;
      private Long quantity;
      private BigDecimal basicRate;
      private BigDecimal discount;
@@ -27,17 +27,17 @@ public class ImsPurchaseproductdetails  implements java.io.Serializable {
     }
 
 	
-    public ImsPurchaseproductdetails(ImsPurchaseproductdetailsId id, ImsPurchasemaster imsPurchasemaster, ImsLogindetails imsLogindetails, Date enteredDate) {
+    public ImsPurchaseproductdetails(ImsPurchaseproductdetailsId id, ImsLogindetails imsLogindetails, ImsPurchasemaster imsPurchasemaster, Date enteredDate) {
         this.id = id;
-        this.imsPurchasemaster = imsPurchasemaster;
         this.imsLogindetails = imsLogindetails;
+        this.imsPurchasemaster = imsPurchasemaster;
         this.enteredDate = enteredDate;
     }
-    public ImsPurchaseproductdetails(ImsPurchaseproductdetailsId id, ImsPurchasemaster imsPurchasemaster, ImsProductdetails imsProductdetails, ImsLogindetails imsLogindetails, Long quantity, BigDecimal basicRate, BigDecimal discount, BigDecimal vat, BigDecimal amount, String remarks, Date enteredDate) {
+    public ImsPurchaseproductdetails(ImsPurchaseproductdetailsId id, ImsLogindetails imsLogindetails, ImsProductdetails imsProductdetails, ImsPurchasemaster imsPurchasemaster, Long quantity, BigDecimal basicRate, BigDecimal discount, BigDecimal vat, BigDecimal amount, String remarks, Date enteredDate) {
        this.id = id;
-       this.imsPurchasemaster = imsPurchasemaster;
-       this.imsProductdetails = imsProductdetails;
        this.imsLogindetails = imsLogindetails;
+       this.imsProductdetails = imsProductdetails;
+       this.imsPurchasemaster = imsPurchasemaster;
        this.quantity = quantity;
        this.basicRate = basicRate;
        this.discount = discount;
@@ -54,12 +54,12 @@ public class ImsPurchaseproductdetails  implements java.io.Serializable {
     public void setId(ImsPurchaseproductdetailsId id) {
         this.id = id;
     }
-    public ImsPurchasemaster getImsPurchasemaster() {
-        return this.imsPurchasemaster;
+    public ImsLogindetails getImsLogindetails() {
+        return this.imsLogindetails;
     }
     
-    public void setImsPurchasemaster(ImsPurchasemaster imsPurchasemaster) {
-        this.imsPurchasemaster = imsPurchasemaster;
+    public void setImsLogindetails(ImsLogindetails imsLogindetails) {
+        this.imsLogindetails = imsLogindetails;
     }
     public ImsProductdetails getImsProductdetails() {
         return this.imsProductdetails;
@@ -68,12 +68,12 @@ public class ImsPurchaseproductdetails  implements java.io.Serializable {
     public void setImsProductdetails(ImsProductdetails imsProductdetails) {
         this.imsProductdetails = imsProductdetails;
     }
-    public ImsLogindetails getImsLogindetails() {
-        return this.imsLogindetails;
+    public ImsPurchasemaster getImsPurchasemaster() {
+        return this.imsPurchasemaster;
     }
     
-    public void setImsLogindetails(ImsLogindetails imsLogindetails) {
-        this.imsLogindetails = imsLogindetails;
+    public void setImsPurchasemaster(ImsPurchasemaster imsPurchasemaster) {
+        this.imsPurchasemaster = imsPurchasemaster;
     }
     public Long getQuantity() {
         return this.quantity;
