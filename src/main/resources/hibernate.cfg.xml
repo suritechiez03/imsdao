@@ -14,8 +14,8 @@
     <mapping resource="org/ims/dao/entity/ImsManageorders.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsSalesproductdetails.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsStockdetails.hbm.xml"/>
-    <mapping resource="org/ims/dao/entity/ImsPurchaseproductdetails.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsPurchasemaster.hbm.xml"/>
+    <mapping resource="org/ims/dao/entity/ImsPurchaseproductdetails.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsSuppliermaster.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsDealersauthorizer.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsBankaccountdetails.hbm.xml"/>

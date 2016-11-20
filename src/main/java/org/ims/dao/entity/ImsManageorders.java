@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Nov 13, 2016 9:33:11 PM by Hibernate Tools 4.3.1
+// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,6 +16,7 @@ public class ImsManageorders  implements java.io.Serializable {
      private ImsLogindetails imsLogindetails;
      private int orderType;
      private String orderFor;
+     private String orderRaisedBy;
      private int orderStatus;
      private String additionalInfo;
      private Date orderRaisedDate;
@@ -33,11 +34,12 @@ public class ImsManageorders  implements java.io.Serializable {
         this.orderStatus = orderStatus;
         this.enteredDate = enteredDate;
     }
-    public ImsManageorders(long oderNumber, ImsLogindetails imsLogindetails, int orderType, String orderFor, int orderStatus, String additionalInfo, Date orderRaisedDate, Date enteredDate, Set imsManageorderdetailses) {
+    public ImsManageorders(long oderNumber, ImsLogindetails imsLogindetails, int orderType, String orderFor, String orderRaisedBy, int orderStatus, String additionalInfo, Date orderRaisedDate, Date enteredDate, Set imsManageorderdetailses) {
        this.oderNumber = oderNumber;
        this.imsLogindetails = imsLogindetails;
        this.orderType = orderType;
        this.orderFor = orderFor;
+       this.orderRaisedBy = orderRaisedBy;
        this.orderStatus = orderStatus;
        this.additionalInfo = additionalInfo;
        this.orderRaisedDate = orderRaisedDate;
@@ -72,6 +74,13 @@ public class ImsManageorders  implements java.io.Serializable {
     
     public void setOrderFor(String orderFor) {
         this.orderFor = orderFor;
+    }
+    public String getOrderRaisedBy() {
+        return this.orderRaisedBy;
+    }
+    
+    public void setOrderRaisedBy(String orderRaisedBy) {
+        this.orderRaisedBy = orderRaisedBy;
     }
     public int getOrderStatus() {
         return this.orderStatus;
