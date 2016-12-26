@@ -30,6 +30,7 @@
     <mapping resource="org/ims/dao/entity/ImsTaxslab.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsGenraldefinition.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsGrouprights.hbm.xml"/>
+    <mapping resource="org/ims/dao/entity/ImsInvoiceMaster.hbm.xml"/>
     <mapping resource="org/ims/dao/entity/ImsDealermaster.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

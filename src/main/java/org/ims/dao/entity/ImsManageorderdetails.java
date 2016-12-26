@@ -1,7 +1,8 @@
 package org.ims.dao.entity;
-// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
+// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
 
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -16,11 +17,14 @@ public class ImsManageorderdetails  implements java.io.Serializable {
      private ImsProductdetails imsProductdetails;
      private Long orderQuantity;
      private Long dispatchedQuantity;
-     private Double basicRate;
+     private BigDecimal unitPrice;
      private Double discount;
      private String particulars;
      private Double vat;
-     private Double amount;
+     private BigDecimal totalPrice;
+     private Double marginPrecnt;
+     private BigDecimal marginAmt;
+     private BigDecimal dealerPrice;
      private Date enteredDate;
      private Date lasModifiedDate;
      private Long modifedBy;
@@ -33,17 +37,20 @@ public class ImsManageorderdetails  implements java.io.Serializable {
         this.imsLogindetails = imsLogindetails;
         this.enteredDate = enteredDate;
     }
-    public ImsManageorderdetails(ImsLogindetails imsLogindetails, ImsManageorders imsManageorders, ImsProductdetails imsProductdetails, Long orderQuantity, Long dispatchedQuantity, Double basicRate, Double discount, String particulars, Double vat, Double amount, Date enteredDate, Date lasModifiedDate, Long modifedBy) {
+    public ImsManageorderdetails(ImsLogindetails imsLogindetails, ImsManageorders imsManageorders, ImsProductdetails imsProductdetails, Long orderQuantity, Long dispatchedQuantity, BigDecimal unitPrice, Double discount, String particulars, Double vat, BigDecimal totalPrice, Double marginPrecnt, BigDecimal marginAmt, BigDecimal dealerPrice, Date enteredDate, Date lasModifiedDate, Long modifedBy) {
        this.imsLogindetails = imsLogindetails;
        this.imsManageorders = imsManageorders;
        this.imsProductdetails = imsProductdetails;
        this.orderQuantity = orderQuantity;
        this.dispatchedQuantity = dispatchedQuantity;
-       this.basicRate = basicRate;
+       this.unitPrice = unitPrice;
        this.discount = discount;
        this.particulars = particulars;
        this.vat = vat;
-       this.amount = amount;
+       this.totalPrice = totalPrice;
+       this.marginPrecnt = marginPrecnt;
+       this.marginAmt = marginAmt;
+       this.dealerPrice = dealerPrice;
        this.enteredDate = enteredDate;
        this.lasModifiedDate = lasModifiedDate;
        this.modifedBy = modifedBy;
@@ -91,12 +98,12 @@ public class ImsManageorderdetails  implements java.io.Serializable {
     public void setDispatchedQuantity(Long dispatchedQuantity) {
         this.dispatchedQuantity = dispatchedQuantity;
     }
-    public Double getBasicRate() {
-        return this.basicRate;
+    public BigDecimal getUnitPrice() {
+        return this.unitPrice;
     }
     
-    public void setBasicRate(Double basicRate) {
-        this.basicRate = basicRate;
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
     public Double getDiscount() {
         return this.discount;
@@ -119,12 +126,33 @@ public class ImsManageorderdetails  implements java.io.Serializable {
     public void setVat(Double vat) {
         this.vat = vat;
     }
-    public Double getAmount() {
-        return this.amount;
+    public BigDecimal getTotalPrice() {
+        return this.totalPrice;
     }
     
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    public Double getMarginPrecnt() {
+        return this.marginPrecnt;
+    }
+    
+    public void setMarginPrecnt(Double marginPrecnt) {
+        this.marginPrecnt = marginPrecnt;
+    }
+    public BigDecimal getMarginAmt() {
+        return this.marginAmt;
+    }
+    
+    public void setMarginAmt(BigDecimal marginAmt) {
+        this.marginAmt = marginAmt;
+    }
+    public BigDecimal getDealerPrice() {
+        return this.dealerPrice;
+    }
+    
+    public void setDealerPrice(BigDecimal dealerPrice) {
+        this.dealerPrice = dealerPrice;
     }
     public Date getEnteredDate() {
         return this.enteredDate;

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 17, 2016 12:01:37 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.ims.dao.entity.ImsLogindetails" table="ims_logindetails" catalog="IMS_DB" optimistic-lock="version">
         <id name="userId" type="long">
@@ -46,6 +46,12 @@
                 <column name="EnteredBy" />
             </key>
             <one-to-many class="org.ims.dao.entity.ImsTransactiondetails" />
+        </set>
+        <set name="imsInvoiceMasters" table="Ims_InvoiceMaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnteredBy" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsInvoiceMaster" />
         </set>
         <set name="imsBanktransactionses" table="ims_banktransactions" inverse="true" lazy="true" fetch="select">
             <key>

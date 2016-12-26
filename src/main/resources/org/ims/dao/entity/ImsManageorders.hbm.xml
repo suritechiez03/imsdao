@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 17, 2016 12:01:37 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.ims.dao.entity.ImsManageorders" table="ims_manageorders" catalog="IMS_DB" optimistic-lock="version">
-        <id name="oderNumber" type="long">
+        <id name="oderNumber" type="java.lang.Long">
             <column name="OderNumber" />
             <generator class="identity" />
         </id>
@@ -29,14 +29,23 @@
         <property name="orderRaisedDate" type="timestamp">
             <column name="OrderRaisedDate" length="19" />
         </property>
+        <property name="generatedOrderNo" type="string">
+            <column name="GeneratedOrderNo" length="45" unique="true" />
+        </property>
         <property name="enteredDate" type="timestamp">
             <column name="EnteredDate" length="19" not-null="true" />
         </property>
-        <set name="imsManageorderdetailses" table="ims_manageorderdetails" inverse="true" lazy="true" fetch="select" cascade="save-update,delete" >
+        <set name="imsManageorderdetailses" table="ims_manageorderdetails" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="OrderNumber" />
             </key>
             <one-to-many class="org.ims.dao.entity.ImsManageorderdetails" />
+        </set>
+        <set name="imsInvoiceMasters" table="Ims_InvoiceMaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OrderNo" not-null="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsInvoiceMaster" />
         </set>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.ims.dao.entity.ImsInvoiceMaster" table="Ims_InvoiceMaster" catalog="IMS_DB" optimistic-lock="version">
+        <id name="invoiceNo" type="string">
+            <column name="InvoiceNo" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
+            <column name="EnteredBy" />
+        </many-to-one>
+        <many-to-one name="imsManageorders" class="org.ims.dao.entity.ImsManageorders" fetch="select">
+            <column name="OrderNo" not-null="true" />
+        </many-to-one>
+        <property name="invoiceDate" type="timestamp">
+            <column name="InvoiceDate" length="19" not-null="true" />
+        </property>
+        <property name="paymentDueDate" type="timestamp">
+            <column name="PaymentDueDate" length="19" />
+        </property>
+        <property name="repName" type="string">
+            <column name="RepName" length="100" />
+        </property>
+        <property name="paymentTerms" type="string">
+            <column name="PaymentTerms" length="100" />
+        </property>
+        <property name="frieghtTerms" type="string">
+            <column name="FrieghtTerms" length="100" />
+        </property>
+        <property name="deliveryTerm" type="string">
+            <column name="DeliveryTerm" length="100" />
+        </property>
+        <property name="transporter" type="string">
+            <column name="Transporter" length="100" />
+        </property>
+        <property name="transportMode" type="string">
+            <column name="TransportMode" length="100" />
+        </property>
+        <property name="esugmaNo" type="string">
+            <column name="ESugmaNo" length="100" />
+        </property>
+        <property name="destination" type="string">
+            <column name="Destination" length="100" />
+        </property>
+        <property name="lrnoAndDate" type="string">
+            <column name="LRNoAndDate" length="100" />
+        </property>
+        <property name="expectedDelivery" type="timestamp">
+            <column name="ExpectedDelivery" length="19" />
+        </property>
+        <property name="noOfPack" type="string">
+            <column name="NoOfPack" length="100" />
+        </property>
+        <property name="grossWieght" type="string">
+            <column name="GrossWieght" length="45" />
+        </property>
+        <property name="fafcharges" type="big_decimal">
+            <column name="FAFCharges" precision="12" scale="4" />
+        </property>
+        <property name="grossAmount" type="big_decimal">
+            <column name="GrossAmount" precision="12" scale="4" />
+        </property>
+        <property name="excisePercentage" type="big_decimal">
+            <column name="ExcisePercentage" precision="12" scale="4" />
+        </property>
+        <property name="exciseRate" type="big_decimal">
+            <column name="ExciseRate" precision="12" scale="4" />
+        </property>
+        <property name="educationCessPercentage" type="big_decimal">
+            <column name="EducationCessPercentage" precision="12" scale="4" />
+        </property>
+        <property name="educationCessRate" type="big_decimal">
+            <column name="EducationCessRate" precision="12" scale="4" />
+        </property>
+        <property name="secEducCessPercentage" type="big_decimal">
+            <column name="SecEducCessPercentage" precision="12" scale="4" />
+        </property>
+        <property name="secEducCessRate" type="big_decimal">
+            <column name="SecEducCessRate" precision="12" scale="4" />
+        </property>
+        <property name="cstpercentage" type="big_decimal">
+            <column name="CSTPercentage" precision="12" scale="4" />
+        </property>
+        <property name="cstrate" type="big_decimal">
+            <column name="CSTRate" precision="12" scale="4" />
+        </property>
+        <property name="vattotal1" type="big_decimal">
+            <column name="VATTotal1" precision="12" scale="4" />
+        </property>
+        <property name="vattotal2" type="big_decimal">
+            <column name="VATTotal2" precision="12" scale="4" />
+        </property>
+        <property name="roundOff" type="big_decimal">
+            <column name="RoundOff" precision="12" scale="4" />
+        </property>
+        <property name="totalAmount" type="big_decimal">
+            <column name="TotalAmount" precision="12" scale="4" />
+        </property>
+        <property name="balanceAmount" type="big_decimal">
+            <column name="BalanceAmount" precision="12" scale="4" />
+        </property>
+        <property name="invoiceStatus" type="java.lang.Integer">
+            <column name="InvoiceStatus" />
+        </property>
+        <property name="enteredDate" type="timestamp">
+            <column name="EnteredDate" length="19" />
+        </property>
+        <set name="imsTransactiondetailses" table="ims_transactiondetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="InvoiceNo" length="20" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsTransactiondetails" />
+        </set>
+    </class>
+</hibernate-mapping>

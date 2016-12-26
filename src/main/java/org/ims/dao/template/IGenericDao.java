@@ -17,7 +17,9 @@ public interface IGenericDao<T extends Serializable> {
     T findOne(final String id);
 
     List<T> findAll();
-
+    
+    List<T> findAllByValue(final String id);
+    
     void create(final T entity);
 
     void update(final T entity);

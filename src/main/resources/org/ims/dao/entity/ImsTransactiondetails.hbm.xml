@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 17, 2016 12:01:37 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.ims.dao.entity.ImsTransactiondetails" table="ims_transactiondetails" catalog="IMS_DB" optimistic-lock="version">
         <id name="transactionId" type="java.lang.Integer">
             <column name="TransactionId" />
             <generator class="identity" />
         </id>
+        <many-to-one name="imsInvoiceMaster" class="org.ims.dao.entity.ImsInvoiceMaster" fetch="select">
+            <column name="InvoiceNo" length="20" />
+        </many-to-one>
         <many-to-one name="imsLogindetails" class="org.ims.dao.entity.ImsLogindetails" fetch="select">
             <column name="EnteredBy" />
         </many-to-one>
-        <property name="invoiceNo" type="string">
-            <column name="InvoiceNo" length="45" />
-        </property>
         <property name="transactionDate" type="timestamp">
             <column name="TransactionDate" length="19" />
         </property>
@@ -29,8 +29,20 @@
         <property name="vocherNo" type="java.lang.Integer">
             <column name="VocherNo" />
         </property>
+        <property name="transactionAmount" type="big_decimal">
+            <column name="TransactionAmount" precision="12" scale="4" />
+        </property>
         <property name="gl" type="string">
             <column name="GL" length="20" />
+        </property>
+        <property name="chequeNo" type="string">
+            <column name="ChequeNo" length="100" />
+        </property>
+        <property name="chequeDate" type="timestamp">
+            <column name="ChequeDate" length="19" />
+        </property>
+        <property name="chequeStatus" type="java.lang.Integer">
+            <column name="ChequeStatus" />
         </property>
         <property name="enteredDate" type="timestamp">
             <column name="EnteredDate" length="19" />

@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
+// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class ImsManageorders  implements java.io.Serializable {
 
 
-     private long oderNumber;
+     private Long oderNumber;
      private ImsLogindetails imsLogindetails;
      private int orderType;
      private String orderFor;
@@ -20,22 +20,22 @@ public class ImsManageorders  implements java.io.Serializable {
      private int orderStatus;
      private String additionalInfo;
      private Date orderRaisedDate;
+     private String generatedOrderNo;
      private Date enteredDate;
      private Set imsManageorderdetailses = new HashSet(0);
+     private Set imsInvoiceMasters = new HashSet(0);
 
     public ImsManageorders() {
     }
 
 	
-    public ImsManageorders(long oderNumber, ImsLogindetails imsLogindetails, int orderType, int orderStatus, Date enteredDate) {
-        this.oderNumber = oderNumber;
+    public ImsManageorders(ImsLogindetails imsLogindetails, int orderType, int orderStatus, Date enteredDate) {
         this.imsLogindetails = imsLogindetails;
         this.orderType = orderType;
         this.orderStatus = orderStatus;
         this.enteredDate = enteredDate;
     }
-    public ImsManageorders(long oderNumber, ImsLogindetails imsLogindetails, int orderType, String orderFor, String orderRaisedBy, int orderStatus, String additionalInfo, Date orderRaisedDate, Date enteredDate, Set imsManageorderdetailses) {
-       this.oderNumber = oderNumber;
+    public ImsManageorders(ImsLogindetails imsLogindetails, int orderType, String orderFor, String orderRaisedBy, int orderStatus, String additionalInfo, Date orderRaisedDate, String generatedOrderNo, Date enteredDate, Set imsManageorderdetailses, Set imsInvoiceMasters) {
        this.imsLogindetails = imsLogindetails;
        this.orderType = orderType;
        this.orderFor = orderFor;
@@ -43,15 +43,17 @@ public class ImsManageorders  implements java.io.Serializable {
        this.orderStatus = orderStatus;
        this.additionalInfo = additionalInfo;
        this.orderRaisedDate = orderRaisedDate;
+       this.generatedOrderNo = generatedOrderNo;
        this.enteredDate = enteredDate;
        this.imsManageorderdetailses = imsManageorderdetailses;
+       this.imsInvoiceMasters = imsInvoiceMasters;
     }
    
-    public long getOderNumber() {
+    public Long getOderNumber() {
         return this.oderNumber;
     }
     
-    public void setOderNumber(long oderNumber) {
+    public void setOderNumber(Long oderNumber) {
         this.oderNumber = oderNumber;
     }
     public ImsLogindetails getImsLogindetails() {
@@ -103,6 +105,13 @@ public class ImsManageorders  implements java.io.Serializable {
     public void setOrderRaisedDate(Date orderRaisedDate) {
         this.orderRaisedDate = orderRaisedDate;
     }
+    public String getGeneratedOrderNo() {
+        return this.generatedOrderNo;
+    }
+    
+    public void setGeneratedOrderNo(String generatedOrderNo) {
+        this.generatedOrderNo = generatedOrderNo;
+    }
     public Date getEnteredDate() {
         return this.enteredDate;
     }
@@ -116,6 +125,13 @@ public class ImsManageorders  implements java.io.Serializable {
     
     public void setImsManageorderdetailses(Set imsManageorderdetailses) {
         this.imsManageorderdetailses = imsManageorderdetailses;
+    }
+    public Set getImsInvoiceMasters() {
+        return this.imsInvoiceMasters;
+    }
+    
+    public void setImsInvoiceMasters(Set imsInvoiceMasters) {
+        this.imsInvoiceMasters = imsInvoiceMasters;
     }
 
 

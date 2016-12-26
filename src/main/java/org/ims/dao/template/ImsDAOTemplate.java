@@ -39,6 +39,10 @@ public abstract class ImsDAOTemplate< T extends Serializable> {
         return getCurrentSession().createQuery("from " + clazz.getName()).list();
     }
 
+    public List< T> findAllByValue(String searchstring) {
+        return getCurrentSession().createQuery("from " + clazz.getName() + " where " + searchstring).list();
+    }
+
     public void create(T entity) {
 //         this.tx = this.getCurrentSession().beginTransaction();
 //              this.getCurrentSession().persist(entity);

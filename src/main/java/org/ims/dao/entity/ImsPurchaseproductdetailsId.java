@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
+// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
 
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 17, 2016 12:01:37 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.ims.dao.entity.ImsManageorderdetails" table="ims_manageorderdetails" catalog="IMS_DB" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -23,8 +23,8 @@
         <property name="dispatchedQuantity" type="java.lang.Long">
             <column name="DispatchedQuantity" />
         </property>
-        <property name="basicRate" type="java.lang.Double">
-            <column name="BasicRate" precision="22" scale="0" />
+        <property name="unitPrice" type="big_decimal">
+            <column name="UnitPrice" precision="12" scale="4" />
         </property>
         <property name="discount" type="java.lang.Double">
             <column name="Discount" precision="22" scale="0" />
@@ -35,8 +35,17 @@
         <property name="vat" type="java.lang.Double">
             <column name="Vat" precision="22" scale="0" />
         </property>
-        <property name="amount" type="java.lang.Double">
-            <column name="Amount" precision="22" scale="0" />
+        <property name="totalPrice" type="big_decimal">
+            <column name="TotalPrice" precision="12" scale="4" />
+        </property>
+        <property name="marginPrecnt" type="java.lang.Double">
+            <column name="MarginPrecnt" precision="22" scale="0" />
+        </property>
+        <property name="marginAmt" type="big_decimal">
+            <column name="MarginAmt" precision="12" scale="4" />
+        </property>
+        <property name="dealerPrice" type="big_decimal">
+            <column name="DealerPrice" precision="12" scale="4" />
         </property>
         <property name="enteredDate" type="timestamp">
             <column name="EnteredDate" length="19" not-null="true" />

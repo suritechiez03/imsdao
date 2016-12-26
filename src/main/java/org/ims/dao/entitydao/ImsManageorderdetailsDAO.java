@@ -1,20 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package org.ims.dao.entitydao;
 
 import java.util.List;
 import java.util.Map;
-import org.ims.dao.entity.ImsManageorders;
-
-import org.ims.dao.entity.ImsOrderdetails;
+import org.ims.dao.entity.ImsManageorderdetails;
 import org.ims.dao.template.IGenericDao;
 import org.ims.dao.template.ImsDAOTemplate;
 
-public class ImsManageordersDAO extends ImsDAOTemplate<ImsManageorders> implements IGenericDao<ImsManageorders> {
-
-	public ImsManageordersDAO() {
-		setClazz(ImsManageorders.class);
+/**
+ * 
+ * @author Suresh Kumar V
+ */
+public class ImsManageorderdetailsDAO extends ImsDAOTemplate<ImsManageorderdetails> implements IGenericDao<ImsManageorderdetails>  {
+    public ImsManageorderdetailsDAO() {
+		setClazz(ImsManageorderdetails.class);
 		// TODO Auto-generated constructor stub
 	}
-
     @Override
     public List<Map> executeCustomSQL(String sql) {
         return super.executeCustomSQL(sql); //To change body of generated methods, choose Tools | Templates.
@@ -26,37 +32,28 @@ public class ImsManageordersDAO extends ImsDAOTemplate<ImsManageorders> implemen
     }
 
     @Override
-    public void delete(ImsManageorders entity) {
+    public void delete(ImsManageorderdetails entity) {
         super.delete(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(ImsManageorders entity) {
+    public void update(ImsManageorderdetails entity) {
         super.update(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void create(ImsManageorders entity) {
+    public void create(ImsManageorderdetails entity) {
         super.create(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<ImsManageorders> findAll() {
+    public List<ImsManageorderdetails> findAll() {
         return super.findAll(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ImsManageorders findOne(String searchstring) {
+    public ImsManageorderdetails findOne(String searchstring) {
         return super.findOne(searchstring); //To change body of generated methods, choose Tools | Templates.
     }
-        
-    public List<Map> imsGetMaxOrderNumber() {
-
-        String sql = "SELECT COALESCE(Max(substr(GeneratedOrderNo,4,7)),0)  as GeneratedOrderNo FROM IMS_DB.ims_manageorders;";
-        return executeCustomSQL(sql);
-        
-    }
-	
-	
 
 }

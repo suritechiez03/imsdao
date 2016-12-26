@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
+// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -23,6 +23,7 @@ public class ImsLogindetails  implements java.io.Serializable {
      private Set imsPurchaseproductdetailses = new HashSet(0);
      private Set imsSuppliermasters = new HashSet(0);
      private Set imsTransactiondetailses = new HashSet(0);
+     private Set imsInvoiceMasters = new HashSet(0);
      private Set imsBanktransactionses = new HashSet(0);
      private Set imsDealermasters = new HashSet(0);
      private Set imsStockdetailses = new HashSet(0);
@@ -49,7 +50,7 @@ public class ImsLogindetails  implements java.io.Serializable {
         this.userPassword = userPassword;
         this.loginStatus = loginStatus;
     }
-    public ImsLogindetails(long userId, ImsEmployee imsEmployee, String userName, String userPassword, boolean loginStatus, Date loginDate, Long enteredBy, Date enteredDate, Set imsPurchaseproductdetailses, Set imsSuppliermasters, Set imsTransactiondetailses, Set imsBanktransactionses, Set imsDealermasters, Set imsStockdetailses, Set imsGrouprightses, Set imsSuppliersauthorizers, Set imsOrderdetailses, Set imsDealersauthorizers, Set imsManageorderdetailses, Set imsProductdetailses, Set imsManageorderses, Set imsPartnerdetailses, Set imsGenraldefinitions, Set imsOptionrightses, Set imsProductcategories, Set imsPurchasemasters) {
+    public ImsLogindetails(long userId, ImsEmployee imsEmployee, String userName, String userPassword, boolean loginStatus, Date loginDate, Long enteredBy, Date enteredDate, Set imsPurchaseproductdetailses, Set imsSuppliermasters, Set imsTransactiondetailses, Set imsInvoiceMasters, Set imsBanktransactionses, Set imsDealermasters, Set imsStockdetailses, Set imsGrouprightses, Set imsSuppliersauthorizers, Set imsOrderdetailses, Set imsDealersauthorizers, Set imsManageorderdetailses, Set imsProductdetailses, Set imsManageorderses, Set imsPartnerdetailses, Set imsGenraldefinitions, Set imsOptionrightses, Set imsProductcategories, Set imsPurchasemasters) {
        this.userId = userId;
        this.imsEmployee = imsEmployee;
        this.userName = userName;
@@ -61,6 +62,7 @@ public class ImsLogindetails  implements java.io.Serializable {
        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
        this.imsSuppliermasters = imsSuppliermasters;
        this.imsTransactiondetailses = imsTransactiondetailses;
+       this.imsInvoiceMasters = imsInvoiceMasters;
        this.imsBanktransactionses = imsBanktransactionses;
        this.imsDealermasters = imsDealermasters;
        this.imsStockdetailses = imsStockdetailses;
@@ -154,6 +156,13 @@ public class ImsLogindetails  implements java.io.Serializable {
     
     public void setImsTransactiondetailses(Set imsTransactiondetailses) {
         this.imsTransactiondetailses = imsTransactiondetailses;
+    }
+    public Set getImsInvoiceMasters() {
+        return this.imsInvoiceMasters;
+    }
+    
+    public void setImsInvoiceMasters(Set imsInvoiceMasters) {
+        this.imsInvoiceMasters = imsInvoiceMasters;
     }
     public Set getImsBanktransactionses() {
         return this.imsBanktransactionses;

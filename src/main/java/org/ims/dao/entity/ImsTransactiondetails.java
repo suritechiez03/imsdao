@@ -1,7 +1,8 @@
 package org.ims.dao.entity;
-// Generated Nov 17, 2016 12:01:36 AM by Hibernate Tools 4.3.1
+// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
 
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -11,28 +12,36 @@ public class ImsTransactiondetails  implements java.io.Serializable {
 
 
      private Integer transactionId;
+     private ImsInvoiceMaster imsInvoiceMaster;
      private ImsLogindetails imsLogindetails;
-     private String invoiceNo;
      private Date transactionDate;
      private Integer transactionType;
      private Integer transactionCrdrtype;
      private String description;
      private Integer vocherNo;
+     private BigDecimal transactionAmount;
      private String gl;
+     private String chequeNo;
+     private Date chequeDate;
+     private Integer chequeStatus;
      private Date enteredDate;
 
     public ImsTransactiondetails() {
     }
 
-    public ImsTransactiondetails(ImsLogindetails imsLogindetails, String invoiceNo, Date transactionDate, Integer transactionType, Integer transactionCrdrtype, String description, Integer vocherNo, String gl, Date enteredDate) {
+    public ImsTransactiondetails(ImsInvoiceMaster imsInvoiceMaster, ImsLogindetails imsLogindetails, Date transactionDate, Integer transactionType, Integer transactionCrdrtype, String description, Integer vocherNo, BigDecimal transactionAmount, String gl, String chequeNo, Date chequeDate, Integer chequeStatus, Date enteredDate) {
+       this.imsInvoiceMaster = imsInvoiceMaster;
        this.imsLogindetails = imsLogindetails;
-       this.invoiceNo = invoiceNo;
        this.transactionDate = transactionDate;
        this.transactionType = transactionType;
        this.transactionCrdrtype = transactionCrdrtype;
        this.description = description;
        this.vocherNo = vocherNo;
+       this.transactionAmount = transactionAmount;
        this.gl = gl;
+       this.chequeNo = chequeNo;
+       this.chequeDate = chequeDate;
+       this.chequeStatus = chequeStatus;
        this.enteredDate = enteredDate;
     }
    
@@ -43,19 +52,19 @@ public class ImsTransactiondetails  implements java.io.Serializable {
     public void setTransactionId(Integer transactionId) {
         this.transactionId = transactionId;
     }
+    public ImsInvoiceMaster getImsInvoiceMaster() {
+        return this.imsInvoiceMaster;
+    }
+    
+    public void setImsInvoiceMaster(ImsInvoiceMaster imsInvoiceMaster) {
+        this.imsInvoiceMaster = imsInvoiceMaster;
+    }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
     }
     
     public void setImsLogindetails(ImsLogindetails imsLogindetails) {
         this.imsLogindetails = imsLogindetails;
-    }
-    public String getInvoiceNo() {
-        return this.invoiceNo;
-    }
-    
-    public void setInvoiceNo(String invoiceNo) {
-        this.invoiceNo = invoiceNo;
     }
     public Date getTransactionDate() {
         return this.transactionDate;
@@ -92,12 +101,40 @@ public class ImsTransactiondetails  implements java.io.Serializable {
     public void setVocherNo(Integer vocherNo) {
         this.vocherNo = vocherNo;
     }
+    public BigDecimal getTransactionAmount() {
+        return this.transactionAmount;
+    }
+    
+    public void setTransactionAmount(BigDecimal transactionAmount) {
+        this.transactionAmount = transactionAmount;
+    }
     public String getGl() {
         return this.gl;
     }
     
     public void setGl(String gl) {
         this.gl = gl;
+    }
+    public String getChequeNo() {
+        return this.chequeNo;
+    }
+    
+    public void setChequeNo(String chequeNo) {
+        this.chequeNo = chequeNo;
+    }
+    public Date getChequeDate() {
+        return this.chequeDate;
+    }
+    
+    public void setChequeDate(Date chequeDate) {
+        this.chequeDate = chequeDate;
+    }
+    public Integer getChequeStatus() {
+        return this.chequeStatus;
+    }
+    
+    public void setChequeStatus(Integer chequeStatus) {
+        this.chequeStatus = chequeStatus;
     }
     public Date getEnteredDate() {
         return this.enteredDate;
