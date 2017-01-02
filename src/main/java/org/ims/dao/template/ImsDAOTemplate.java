@@ -5,90 +5,81 @@
  */
 package org.ims.dao.template;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.ims.dao.session.HibernateUtil;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author suri
  */
-public abstract class ImsDAOTemplate< T extends Serializable> {
+public class ImsDAOTemplate< T> extends HibernateDaoSupport {
 
     private Class< T> clazz;
 
-    SessionFactory sessionFactory;
-
-    Transaction tx;
-
+//    SessionFactory sessionFactory;
+//    Transaction tx;
     public final void setClazz(Class< T> clazzToSet) {
         this.clazz = clazzToSet;
     }
 
     public T findOne(String searchstring) {
-        return (T) getCurrentSession().createQuery("from " + clazz.getName() + " where " + searchstring).uniqueResult();
+//        return (T) getCurrentSession().createQuery("from " + clazz.getName() + " where " + searchstring).uniqueResult();
+        return (T) getHibernateTemplate().find("from " + clazz.getName() + " where " + searchstring).get(0);
+
     }
 
     public List< T> findAll() {
-        return getCurrentSession().createQuery("from " + clazz.getName()).list();
+//        return getCurrentSession().createQuery("from " + clazz.getName()).list();
+        return (List<T>) getHibernateTemplate().find("from " + clazz.getName());
+
     }
 
     public List< T> findAllByValue(String searchstring) {
-        return getCurrentSession().createQuery("from " + clazz.getName() + " where " + searchstring).list();
+        return (List<T>) getHibernateTemplate().find("from " + clazz.getName() + " where " + searchstring);
     }
-
+    
     public void create(T entity) {
-//         this.tx = this.getCurrentSession().beginTransaction();
-//              this.getCurrentSession().persist(entity);
-//              this.getCurrentSession().flush();
-//         this.tx.commit();
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction t = session.beginTransaction();
-        session.save(entity);
-        t.commit();
+        getHibernateTemplate().save(entity);
     }
-
+    
     public void update(T entity) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction t = session.beginTransaction();
-        session.merge(entity);
-        t.commit();
-//      getCurrentSession().merge( entity );
-
+        getHibernateTemplate().update(entity);
     }
-
+    
     public void delete(T entity) {
-//        getCurrentSession().delete(entity);
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction t = session.beginTransaction();
-        session.delete(entity);
-        t.commit();
+        getHibernateTemplate().delete(entity);
     }
-
+    @Transactional
     public void deleteById(String entityId) {
         T entity = findOne(entityId);
-//        delete(entity);
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction t = session.beginTransaction();
-        session.delete(entity);
-        t.commit();
+        this.delete(entity);
     }
 
-    public List<Map> executeCustomSQL(String sql) {
-        SQLQuery query = getCurrentSession().createSQLQuery(sql);
-        query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-        List<Map> data = (List<Map>) query.list();
+    public List<Map> executeCustomSQL(final String sql) {
+        List<Map> data=(List<Map>) getHibernateTemplate().execute(new HibernateCallback() {
+
+            @Override
+            public List<Map> doInHibernate(Session sn) throws HibernateException {
+                SQLQuery query = sn.createSQLQuery(sql);
+                query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+                return (List<Map>) query.list();
+                
+            }
+        });
         return data;
+
     }
 
     protected final Session getCurrentSession() {
-        return HibernateUtil.getSessionFactory().openSession();
+        return getHibernateTemplate().getSessionFactory().getCurrentSession();
     }
 
 }

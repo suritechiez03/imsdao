@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
+// Generated Dec 27, 2016 11:33:32 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -11,20 +11,14 @@ import java.util.Date;
 public class ImsStockdetails  implements java.io.Serializable {
 
 
-     private String productCode;
+     private Long id;
      private ImsLogindetails imsLogindetails;
      private ImsProductdetails imsProductdetails;
      private Long purchasedQty;
      private Long dispatchedQty;
      private Long availableQty;
-     private BigDecimal basicRate;
-     private BigDecimal excesseDutyPercentage;
-     private BigDecimal excessDutyRate;
-     private BigDecimal transPortationPercentage;
-     private BigDecimal transportationRate;
-     private BigDecimal cstpercentage;
-     private BigDecimal cstrate;
-     private BigDecimal basicDistributorPrice;
+     private BigDecimal unitPrice;
+     private BigDecimal totalPrice;
      private BigDecimal ourMarginPercentage;
      private BigDecimal ourMerginAmount;
      private BigDecimal dealerPrice;
@@ -37,32 +31,26 @@ public class ImsStockdetails  implements java.io.Serializable {
     public ImsStockdetails(ImsProductdetails imsProductdetails) {
         this.imsProductdetails = imsProductdetails;
     }
-    public ImsStockdetails(ImsLogindetails imsLogindetails, ImsProductdetails imsProductdetails, Long purchasedQty, Long dispatchedQty, Long availableQty, BigDecimal basicRate, BigDecimal excesseDutyPercentage, BigDecimal excessDutyRate, BigDecimal transPortationPercentage, BigDecimal transportationRate, BigDecimal cstpercentage, BigDecimal cstrate, BigDecimal basicDistributorPrice, BigDecimal ourMarginPercentage, BigDecimal ourMerginAmount, BigDecimal dealerPrice, Date enteredDate) {
+    public ImsStockdetails(ImsLogindetails imsLogindetails, ImsProductdetails imsProductdetails, Long purchasedQty, Long dispatchedQty, Long availableQty, BigDecimal unitPrice, BigDecimal totalPrice, BigDecimal ourMarginPercentage, BigDecimal ourMerginAmount, BigDecimal dealerPrice, Date enteredDate) {
        this.imsLogindetails = imsLogindetails;
        this.imsProductdetails = imsProductdetails;
        this.purchasedQty = purchasedQty;
        this.dispatchedQty = dispatchedQty;
        this.availableQty = availableQty;
-       this.basicRate = basicRate;
-       this.excesseDutyPercentage = excesseDutyPercentage;
-       this.excessDutyRate = excessDutyRate;
-       this.transPortationPercentage = transPortationPercentage;
-       this.transportationRate = transportationRate;
-       this.cstpercentage = cstpercentage;
-       this.cstrate = cstrate;
-       this.basicDistributorPrice = basicDistributorPrice;
+       this.unitPrice = unitPrice;
+       this.totalPrice = totalPrice;
        this.ourMarginPercentage = ourMarginPercentage;
        this.ourMerginAmount = ourMerginAmount;
        this.dealerPrice = dealerPrice;
        this.enteredDate = enteredDate;
     }
    
-    public String getProductCode() {
-        return this.productCode;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
+    public void setId(Long id) {
+        this.id = id;
     }
     public ImsLogindetails getImsLogindetails() {
         return this.imsLogindetails;
@@ -99,61 +87,19 @@ public class ImsStockdetails  implements java.io.Serializable {
     public void setAvailableQty(Long availableQty) {
         this.availableQty = availableQty;
     }
-    public BigDecimal getBasicRate() {
-        return this.basicRate;
+    public BigDecimal getUnitPrice() {
+        return this.unitPrice;
     }
     
-    public void setBasicRate(BigDecimal basicRate) {
-        this.basicRate = basicRate;
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
-    public BigDecimal getExcesseDutyPercentage() {
-        return this.excesseDutyPercentage;
-    }
-    
-    public void setExcesseDutyPercentage(BigDecimal excesseDutyPercentage) {
-        this.excesseDutyPercentage = excesseDutyPercentage;
-    }
-    public BigDecimal getExcessDutyRate() {
-        return this.excessDutyRate;
+    public BigDecimal getTotalPrice() {
+        return this.totalPrice;
     }
     
-    public void setExcessDutyRate(BigDecimal excessDutyRate) {
-        this.excessDutyRate = excessDutyRate;
-    }
-    public BigDecimal getTransPortationPercentage() {
-        return this.transPortationPercentage;
-    }
-    
-    public void setTransPortationPercentage(BigDecimal transPortationPercentage) {
-        this.transPortationPercentage = transPortationPercentage;
-    }
-    public BigDecimal getTransportationRate() {
-        return this.transportationRate;
-    }
-    
-    public void setTransportationRate(BigDecimal transportationRate) {
-        this.transportationRate = transportationRate;
-    }
-    public BigDecimal getCstpercentage() {
-        return this.cstpercentage;
-    }
-    
-    public void setCstpercentage(BigDecimal cstpercentage) {
-        this.cstpercentage = cstpercentage;
-    }
-    public BigDecimal getCstrate() {
-        return this.cstrate;
-    }
-    
-    public void setCstrate(BigDecimal cstrate) {
-        this.cstrate = cstrate;
-    }
-    public BigDecimal getBasicDistributorPrice() {
-        return this.basicDistributorPrice;
-    }
-    
-    public void setBasicDistributorPrice(BigDecimal basicDistributorPrice) {
-        this.basicDistributorPrice = basicDistributorPrice;
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
     public BigDecimal getOurMarginPercentage() {
         return this.ourMarginPercentage;

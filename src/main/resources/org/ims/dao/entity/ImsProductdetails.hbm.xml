@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 26, 2016 9:20:08 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 27, 2016 11:33:37 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.ims.dao.entity.ImsProductdetails" table="ims_productdetails" catalog="IMS_DB" optimistic-lock="version">
         <id name="productCode" type="string">
@@ -47,7 +47,12 @@
             </key>
             <one-to-many class="org.ims.dao.entity.ImsSalesproductdetails" />
         </set>
-        <one-to-one name="imsStockdetails" class="org.ims.dao.entity.ImsStockdetails"></one-to-one>
+        <set name="imsStockdetailses" table="ims_stockdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProductCode" length="30" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="org.ims.dao.entity.ImsStockdetails" />
+        </set>
         <set name="imsOrderdetailses" table="ims_orderdetails" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ProductCode" length="30" not-null="true" />

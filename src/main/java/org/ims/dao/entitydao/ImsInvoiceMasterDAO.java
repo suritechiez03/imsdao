@@ -8,9 +8,14 @@ package org.ims.dao.entitydao;
 
 import java.util.List;
 import java.util.Map;
+import org.hibernate.Session;
 import org.ims.dao.entity.ImsInvoiceMaster;
+import org.ims.dao.entity.ImsManageorders;
+import org.ims.dao.entity.ImsTransactiondetails;
+import org.ims.dao.session.HibernateUtil;
 import org.ims.dao.template.IGenericDao;
 import org.ims.dao.template.ImsDAOTemplate;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -61,7 +66,14 @@ public class ImsInvoiceMasterDAO extends ImsDAOTemplate<ImsInvoiceMaster> implem
     public ImsInvoiceMaster findOne(String searchstring) {
         return super.findOne(searchstring); //To change body of generated methods, choose Tools | Templates.
     }
-    
+   // @Transactional
+    public void saveInvoice(ImsManageorders orders,ImsInvoiceMaster invoice,ImsTransactiondetails transactions){
+       
+        getHibernateTemplate().save(orders);
+        getHibernateTemplate().flush();
+        getHibernateTemplate().save(invoice);
+        
+    }
     
 
 }

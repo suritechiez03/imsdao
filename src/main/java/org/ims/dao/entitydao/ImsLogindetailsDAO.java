@@ -54,13 +54,13 @@ public class ImsLogindetailsDAO extends ImsDAOTemplate<ImsLogindetails> implemen
         return super.findAll(); //To change body of generated methods, choose Tools | Templates.
     }
 
-
     @Override
-    public ImsLogindetails findOne(String username) {
-        Query q = super.getCurrentSession().createQuery("from ImsLogindetails where username='" + username + "'");
-        return (ImsLogindetails) q.uniqueResult();
-        
+    public ImsLogindetails findOne(String searchstring) {
+        return super.findOne(" username='"+searchstring+"'"); //To change body of generated methods, choose Tools | Templates.
     }
+
+
+ 
 
     
     

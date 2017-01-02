@@ -1,5 +1,5 @@
 package org.ims.dao.entity;
-// Generated Dec 26, 2016 9:20:06 PM by Hibernate Tools 4.3.1
+// Generated Dec 27, 2016 11:33:32 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,7 +24,7 @@ public class ImsProductdetails  implements java.io.Serializable {
      private Date enteredDate;
      private Set imsManageorderdetailses = new HashSet(0);
      private Set imsSalesproductdetailses = new HashSet(0);
-     private ImsStockdetails imsStockdetails;
+     private Set imsStockdetailses = new HashSet(0);
      private Set imsOrderdetailses = new HashSet(0);
      private Set imsPurchaseproductdetailses = new HashSet(0);
 
@@ -35,7 +35,7 @@ public class ImsProductdetails  implements java.io.Serializable {
     public ImsProductdetails(String productCode) {
         this.productCode = productCode;
     }
-    public ImsProductdetails(String productCode, ImsLogindetails imsLogindetails, ImsProductcategory imsProductcategory, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate, Set imsManageorderdetailses, Set imsSalesproductdetailses, ImsStockdetails imsStockdetails, Set imsOrderdetailses, Set imsPurchaseproductdetailses) {
+    public ImsProductdetails(String productCode, ImsLogindetails imsLogindetails, ImsProductcategory imsProductcategory, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate, Set imsManageorderdetailses, Set imsSalesproductdetailses, Set imsStockdetailses, Set imsOrderdetailses, Set imsPurchaseproductdetailses) {
        this.productCode = productCode;
        this.imsLogindetails = imsLogindetails;
        this.imsProductcategory = imsProductcategory;
@@ -48,7 +48,7 @@ public class ImsProductdetails  implements java.io.Serializable {
        this.enteredDate = enteredDate;
        this.imsManageorderdetailses = imsManageorderdetailses;
        this.imsSalesproductdetailses = imsSalesproductdetailses;
-       this.imsStockdetails = imsStockdetails;
+       this.imsStockdetailses = imsStockdetailses;
        this.imsOrderdetailses = imsOrderdetailses;
        this.imsPurchaseproductdetailses = imsPurchaseproductdetailses;
     }
@@ -137,12 +137,12 @@ public class ImsProductdetails  implements java.io.Serializable {
     public void setImsSalesproductdetailses(Set imsSalesproductdetailses) {
         this.imsSalesproductdetailses = imsSalesproductdetailses;
     }
-    public ImsStockdetails getImsStockdetails() {
-        return this.imsStockdetails;
+    public Set getImsStockdetailses() {
+        return this.imsStockdetailses;
     }
     
-    public void setImsStockdetails(ImsStockdetails imsStockdetails) {
-        this.imsStockdetails = imsStockdetails;
+    public void setImsStockdetailses(Set imsStockdetailses) {
+        this.imsStockdetailses = imsStockdetailses;
     }
     public Set getImsOrderdetailses() {
         return this.imsOrderdetailses;
