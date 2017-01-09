@@ -8,25 +8,20 @@ package org.ims.dao.entitydao;
 
 import java.util.List;
 import java.util.Map;
-import org.hibernate.Session;
-import org.ims.dao.entity.ImsInvoiceMaster;
-import org.ims.dao.entity.ImsManageorders;
-import org.ims.dao.entity.ImsTransactiondetails;
-import org.ims.dao.session.HibernateUtil;
+import org.ims.dao.entity.ImsStockdetails;
 import org.ims.dao.template.IGenericDao;
 import org.ims.dao.template.ImsDAOTemplate;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
  * @author Suresh Kumar V
  */
-public class ImsInvoiceMasterDAO extends ImsDAOTemplate<ImsInvoiceMaster> implements IGenericDao<ImsInvoiceMaster>{
+public class ImsStockdetailsDAO extends ImsDAOTemplate<ImsStockdetails> implements IGenericDao<ImsStockdetails> {
 
-    public ImsInvoiceMasterDAO() {
-        super.setClazz(ImsInvoiceMaster.class);
+    public ImsStockdetailsDAO() {
+        super.setClazz(ImsStockdetails.class);
     }
-
+    
     @Override
     public List<Map> executeCustomSQL(String sql) {
         return super.executeCustomSQL(sql); //To change body of generated methods, choose Tools | Templates.
@@ -38,41 +33,33 @@ public class ImsInvoiceMasterDAO extends ImsDAOTemplate<ImsInvoiceMaster> implem
     }
 
     @Override
-    public void delete(ImsInvoiceMaster entity) {
+    public void delete(ImsStockdetails entity) {
         super.delete(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(ImsInvoiceMaster entity) {
+    public void update(ImsStockdetails entity) {
         super.update(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void create(ImsInvoiceMaster entity) {
+    public void create(ImsStockdetails entity) {
         super.create(entity); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<ImsInvoiceMaster> findAllByValue(String searchstring) {
+    public List<ImsStockdetails> findAllByValue(String searchstring) {
         return super.findAllByValue(searchstring); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<ImsInvoiceMaster> findAll() {
+    public List<ImsStockdetails> findAll() {
         return super.findAll(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ImsInvoiceMaster findOne(String searchstring) {
+    public ImsStockdetails findOne(String searchstring) {
         return super.findOne(searchstring); //To change body of generated methods, choose Tools | Templates.
-    }
-   // @Transactional
-    public void saveInvoice(ImsManageorders orders,ImsInvoiceMaster invoice,ImsTransactiondetails transactions){
-       
-        getHibernateTemplate().saveOrUpdate(orders);
-        getHibernateTemplate().flush();
-        getHibernateTemplate().saveOrUpdate(invoice);
-        
     }
     
 
