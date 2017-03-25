@@ -52,11 +52,17 @@ public class ImsManageordersDAO extends ImsDAOTemplate<ImsManageorders> implemen
         
     public List<Map> imsGetMaxOrderNumber() {
 
-        String sql = "SELECT COALESCE(Max(substr(GeneratedOrderNo,4,7)),0)  as GeneratedOrderNo FROM IMS_DB.ims_manageorders;";
+        String sql = "SELECT COALESCE(Max(substr(GeneratedOrderNo,4,10)),0)  as GeneratedOrderNo FROM IMS_DB.ims_manageorders;";
         return executeCustomSQL(sql);
         
     }
-	
-	
+    
+    public Boolean SaveOrUpdateOrder(ImsManageorders entity) {
+        getHibernateTemplate().clear();
+        getHibernateTemplate().saveOrUpdate(entity); //To change body of generated methods, choose Tools | Templates.
+        getHibernateTemplate().flush();
+        return true;
+    }
+    	
 
 }

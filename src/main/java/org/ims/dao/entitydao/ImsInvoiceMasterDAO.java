@@ -67,10 +67,10 @@ public class ImsInvoiceMasterDAO extends ImsDAOTemplate<ImsInvoiceMaster> implem
         return super.findOne(searchstring); //To change body of generated methods, choose Tools | Templates.
     }
    // @Transactional
-    public void saveInvoice(ImsManageorders orders,ImsInvoiceMaster invoice,ImsTransactiondetails transactions){
+    public void saveInvoice(ImsInvoiceMaster invoice,ImsTransactiondetails transactions){
        
-        getHibernateTemplate().saveOrUpdate(orders);
-        getHibernateTemplate().flush();
+        //getHibernateTemplate().saveOrUpdate(orders);
+        getHibernateTemplate().clear();
         getHibernateTemplate().saveOrUpdate(invoice);
         
     }
