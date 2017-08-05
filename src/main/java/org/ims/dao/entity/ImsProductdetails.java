@@ -22,6 +22,7 @@ public class ImsProductdetails  implements java.io.Serializable {
      private Long moq;
      private String color;
      private Date enteredDate;
+     private String HsnSacNo;
      private Set imsManageorderdetailses = new HashSet(0);
      private Set imsSalesproductdetailses = new HashSet(0);
      private Set imsStockdetailses = new HashSet(0);
@@ -35,7 +36,7 @@ public class ImsProductdetails  implements java.io.Serializable {
     public ImsProductdetails(String productCode) {
         this.productCode = productCode;
     }
-    public ImsProductdetails(String productCode, ImsLogindetails imsLogindetails, ImsProductcategory imsProductcategory, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate, Set imsManageorderdetailses, Set imsSalesproductdetailses, Set imsStockdetailses, Set imsOrderdetailses, Set imsPurchaseproductdetailses) {
+    public ImsProductdetails(String productCode, ImsLogindetails imsLogindetails, ImsProductcategory imsProductcategory, String productName, String specificationAndThickNess, String units, String size, Long moq, String color, Date enteredDate,String HsnSacnNo, Set imsManageorderdetailses, Set imsSalesproductdetailses, Set imsStockdetailses, Set imsOrderdetailses, Set imsPurchaseproductdetailses) {
        this.productCode = productCode;
        this.imsLogindetails = imsLogindetails;
        this.imsProductcategory = imsProductcategory;
@@ -46,6 +47,7 @@ public class ImsProductdetails  implements java.io.Serializable {
        this.moq = moq;
        this.color = color;
        this.enteredDate = enteredDate;
+       this.HsnSacNo=HsnSacnNo;
        this.imsManageorderdetailses = imsManageorderdetailses;
        this.imsSalesproductdetailses = imsSalesproductdetailses;
        this.imsStockdetailses = imsStockdetailses;
@@ -122,6 +124,14 @@ public class ImsProductdetails  implements java.io.Serializable {
     
     public void setEnteredDate(Date enteredDate) {
         this.enteredDate = enteredDate;
+    }
+    
+    public String getHsnSacNo() {
+        return HsnSacNo;
+    }
+
+    public void setHsnSacNo(String HsnSacNo) {
+        this.HsnSacNo = HsnSacNo;
     }
     public Set getImsManageorderdetailses() {
         return this.imsManageorderdetailses;

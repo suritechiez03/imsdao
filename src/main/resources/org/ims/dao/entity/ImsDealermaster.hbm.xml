@@ -44,6 +44,9 @@
         <property name="status" type="java.lang.Boolean">
             <column name="Status" />
         </property>
+        <property name="gstnumber" type="string">
+            <column name="GSTNumber" length="50" />
+        </property>
         <set name="imsOrderdetailses" table="ims_orderdetails" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="DealerNo" length="5" />

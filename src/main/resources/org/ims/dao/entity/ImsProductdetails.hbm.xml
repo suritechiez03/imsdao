@@ -35,6 +35,9 @@
         <property name="enteredDate" type="timestamp">
             <column name="EnteredDate" length="19" />
         </property>
+        <property name="HsnSacNo" type="string">
+            <column name="HsnSacNo" length="50" />
+        </property>
         <set name="imsManageorderdetailses" table="ims_manageorderdetails" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ProductCode" length="30" />

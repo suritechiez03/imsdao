@@ -25,6 +25,8 @@ public class ImsDealermaster  implements java.io.Serializable {
      private String offlicePhNumber;
      private Date enteredDate;
      private Boolean status;
+     private String gstnumber;
+
      private Set imsOrderdetailses = new HashSet(0);
      private Set imsDealersauthorizers = new HashSet(0);
 
@@ -40,7 +42,7 @@ public class ImsDealermaster  implements java.io.Serializable {
         this.cstnumber = cstnumber;
         this.enteredDate = enteredDate;
     }
-    public ImsDealermaster(String dealerNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status, Set imsOrderdetailses, Set imsDealersauthorizers) {
+    public ImsDealermaster(String dealerNumber, ImsLogindetails imsLogindetails, String companyName, String companywebsite, String companyEmail, String comapanyAddress, String tinNumber, String cstnumber, String pannumber, byte[] vccertificate, String offlicePhNumber, Date enteredDate, Boolean status,String gstnumber, Set imsOrderdetailses, Set imsDealersauthorizers) {
        this.dealerNumber = dealerNumber;
        this.imsLogindetails = imsLogindetails;
        this.companyName = companyName;
@@ -54,6 +56,7 @@ public class ImsDealermaster  implements java.io.Serializable {
        this.offlicePhNumber = offlicePhNumber;
        this.enteredDate = enteredDate;
        this.status = status;
+       this.gstnumber=gstnumber;
        this.imsOrderdetailses = imsOrderdetailses;
        this.imsDealersauthorizers = imsDealersauthorizers;
     }
@@ -148,6 +151,14 @@ public class ImsDealermaster  implements java.io.Serializable {
     
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+    
+    public String getGstnumber() {
+        return gstnumber;
+    }
+
+    public void setGstnumber(String gstnumber) {
+        this.gstnumber = gstnumber;
     }
     public Set getImsOrderdetailses() {
         return this.imsOrderdetailses;
